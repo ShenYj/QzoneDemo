@@ -16,6 +16,7 @@
 #ifdef __OBJC__
 
 #import "Masonry.h"
+#import <UIKit/UIKit.h>
 
 #endif
 
