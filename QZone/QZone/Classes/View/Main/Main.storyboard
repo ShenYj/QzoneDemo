@@ -100,7 +100,7 @@
         <!--Split View Controller-->
         <scene sceneID="Evz-qH-gBM">
             <objects>
-                <splitViewController id="gKa-Qd-c86" sceneMemberID="viewController">
+                <splitViewController id="gKa-Qd-c86" customClass="JSSplitViewController" sceneMemberID="viewController">
                     <connections>
                         <segue destination="Low-w1-aqB" kind="relationship" relationship="detailViewController" id="k05-0o-8yz"/>
                         <segue destination="Znf-zd-twA" kind="relationship" relationship="masterViewController" id="cmd-QV-0OY"/>

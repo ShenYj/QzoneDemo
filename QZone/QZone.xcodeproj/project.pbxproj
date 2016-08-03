@@ -13,6 +13,7 @@
 		F79010081D50FCCD0030ACC6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7900FFF1D50FCCD0030ACC6 /* LaunchScreen.storyboard */; };
 		F790100A1D50FCCD0030ACC6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F79010031D50FCCD0030ACC6 /* main.m */; };
 		F7B664B71D5193BF00DB33E1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7B664B61D5193BF00DB33E1 /* Main.storyboard */; };
+		F7B664BD1D51B06800DB33E1 /* JSSplitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F7B664BC1D51B06800DB33E1 /* JSSplitViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,8 @@
 		F79010031D50FCCD0030ACC6 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		F79010121D50FD170030ACC6 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		F7B664B61D5193BF00DB33E1 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		F7B664BB1D51B06800DB33E1 /* JSSplitViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSSplitViewController.h; sourceTree = "<group>"; };
+		F7B664BC1D51B06800DB33E1 /* JSSplitViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSSplitViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +139,9 @@
 		F7B664B11D51928C00DB33E1 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				F7B664B81D51A87D00DB33E1 /* iPad */,
+				F7B664B91D51A87D00DB33E1 /* iPhone */,
+				F7B664BA1D51A87D00DB33E1 /* Universal */,
 				F7B664B21D51928C00DB33E1 /* Main */,
 			);
 			path = View;
@@ -154,6 +160,8 @@
 		F7B664B31D51928C00DB33E1 /* Main_iPad */ = {
 			isa = PBXGroup;
 			children = (
+				F7B664BB1D51B06800DB33E1 /* JSSplitViewController.h */,
+				F7B664BC1D51B06800DB33E1 /* JSSplitViewController.m */,
 			);
 			path = Main_iPad;
 			sourceTree = "<group>";
@@ -170,6 +178,27 @@
 			children = (
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		F7B664B81D51A87D00DB33E1 /* iPad */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = iPad;
+			sourceTree = "<group>";
+		};
+		F7B664B91D51A87D00DB33E1 /* iPhone */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = iPhone;
+			sourceTree = "<group>";
+		};
+		F7B664BA1D51A87D00DB33E1 /* Universal */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Universal;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -201,6 +230,7 @@
 		F7900FD81D50F94C0030ACC6 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = JS;
 				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = "___ShenYJ___";
 				TargetAttributes = {
@@ -296,6 +326,7 @@
 			files = (
 				F790100A1D50FCCD0030ACC6 /* main.m in Sources */,
 				F79010061D50FCCD0030ACC6 /* AppDelegate.m in Sources */,
+				F7B664BD1D51B06800DB33E1 /* JSSplitViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

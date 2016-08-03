@@ -23,6 +23,8 @@
 // 宏
 #define isiPhone ([UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPhone) 
 
+
+
 // NSLog调试
 #ifdef DEBUG
 #define NSLog(fmt, ...) NSLog((@"%s [Line %d] " fmt), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__)
