@@ -48,6 +48,18 @@
     // 设置主视图的宽度比例 (主视图宽度 / SplitVc整体宽度)  比例不好控制&受最大(maximumPrimaryColumnWidth)最小值(minimumPrimaryColumnWidth)约束
     // 直接设置最大宽度为一个固定值
     
+    /*
+     
+     static inline BOOL UIDeviceOrientationIsPortrait(UIDeviceOrientation orientation)  __TVOS_PROHIBITED {
+     return ((orientation) == UIDeviceOrientationPortrait || (orientation) == UIDeviceOrientationPortraitUpsideDown);
+     }
+     
+     static inline BOOL UIDeviceOrientationIsLandscape(UIDeviceOrientation orientation)  __TVOS_PROHIBITED {
+     return ((orientation) == UIDeviceOrientationLandscapeLeft || (orientation) == UIDeviceOrientationLandscapeRight);
+     }
+    
+    */
+    
     // 根据横竖屏变化,设置不同的主视图宽度
     if (UIDeviceOrientationIsPortrait([UIDevice currentDevice].orientation)) { // 竖屏
         
@@ -59,7 +71,6 @@
         self.maximumPrimaryColumnWidth = 200;
         
     }
-
     
 }
 

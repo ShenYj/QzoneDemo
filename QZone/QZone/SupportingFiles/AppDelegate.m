@@ -39,6 +39,24 @@
     return YES;
 }
 
+
+// 当设置应用的可支持方向时调用
+- (UIInterfaceOrientationMask)application:(UIApplication *)application supportedInterfaceOrientationsForWindow:(UIWindow *)window{
+    
+    // 根据不同设备设置支持方向
+    if (isiPhone) {
+        
+        // iPhone
+        return UIInterfaceOrientationMaskPortrait;
+        
+    }else {
+        
+        // iPad
+        return UIInterfaceOrientationMaskAll;
+    }
+    
+}
+
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
     // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
