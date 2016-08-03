@@ -18,6 +18,15 @@
 		F7B664C31D5231C700DB33E1 /* JSTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = F7B664C21D5231C700DB33E1 /* JSTabBarController.m */; };
 		F7B664C71D5234AA00DB33E1 /* UIColor+RandomColor.m in Sources */ = {isa = PBXBuildFile; fileRef = F7B664C61D5234AA00DB33E1 /* UIColor+RandomColor.m */; };
 		F7B664CB1D5234B000DB33E1 /* UIImage+Color.m in Sources */ = {isa = PBXBuildFile; fileRef = F7B664CA1D5234B000DB33E1 /* UIImage+Color.m */; };
+		F7B664D61D523BC000DB33E1 /* JSHomeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F7B664D51D523BC000DB33E1 /* JSHomeTableViewController.m */; };
+		F7B664D91D523BCA00DB33E1 /* JSAboutMeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F7B664D81D523BCA00DB33E1 /* JSAboutMeTableViewController.m */; };
+		F7B664DC1D523BDD00DB33E1 /* JSMySpaceTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F7B664DB1D523BDD00DB33E1 /* JSMySpaceTableViewController.m */; };
+		F7B664DF1D523BF600DB33E1 /* JSMoreAppTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F7B664DE1D523BF600DB33E1 /* JSMoreAppTableViewController.m */; };
+		F7B664E21D523C0000DB33E1 /* JSMyFriendTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F7B664E11D523C0000DB33E1 /* JSMyFriendTableViewController.m */; };
+		F7B664E51D523C0E00DB33E1 /* JSComposeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F7B664E41D523C0E00DB33E1 /* JSComposeViewController.m */; };
+		F7B664E81D523C2300DB33E1 /* JSAlbumTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F7B664E71D523C2300DB33E1 /* JSAlbumTableViewController.m */; };
+		F7B664EB1D523C4000DB33E1 /* JSPictureWallCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F7B664EA1D523C4000DB33E1 /* JSPictureWallCollectionViewController.m */; };
+		F7B664EE1D5245E000DB33E1 /* JSTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = F7B664ED1D5245E000DB33E1 /* JSTabBar.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +52,24 @@
 		F7B664C61D5234AA00DB33E1 /* UIColor+RandomColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+RandomColor.m"; sourceTree = "<group>"; };
 		F7B664C91D5234B000DB33E1 /* UIImage+Color.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Color.h"; sourceTree = "<group>"; };
 		F7B664CA1D5234B000DB33E1 /* UIImage+Color.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Color.m"; sourceTree = "<group>"; };
+		F7B664D41D523BC000DB33E1 /* JSHomeTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSHomeTableViewController.h; sourceTree = "<group>"; };
+		F7B664D51D523BC000DB33E1 /* JSHomeTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSHomeTableViewController.m; sourceTree = "<group>"; };
+		F7B664D71D523BCA00DB33E1 /* JSAboutMeTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSAboutMeTableViewController.h; sourceTree = "<group>"; };
+		F7B664D81D523BCA00DB33E1 /* JSAboutMeTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSAboutMeTableViewController.m; sourceTree = "<group>"; };
+		F7B664DA1D523BDD00DB33E1 /* JSMySpaceTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSMySpaceTableViewController.h; sourceTree = "<group>"; };
+		F7B664DB1D523BDD00DB33E1 /* JSMySpaceTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSMySpaceTableViewController.m; sourceTree = "<group>"; };
+		F7B664DD1D523BF600DB33E1 /* JSMoreAppTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSMoreAppTableViewController.h; sourceTree = "<group>"; };
+		F7B664DE1D523BF600DB33E1 /* JSMoreAppTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSMoreAppTableViewController.m; sourceTree = "<group>"; };
+		F7B664E01D523C0000DB33E1 /* JSMyFriendTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSMyFriendTableViewController.h; sourceTree = "<group>"; };
+		F7B664E11D523C0000DB33E1 /* JSMyFriendTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSMyFriendTableViewController.m; sourceTree = "<group>"; };
+		F7B664E31D523C0E00DB33E1 /* JSComposeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSComposeViewController.h; sourceTree = "<group>"; };
+		F7B664E41D523C0E00DB33E1 /* JSComposeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSComposeViewController.m; sourceTree = "<group>"; };
+		F7B664E61D523C2300DB33E1 /* JSAlbumTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSAlbumTableViewController.h; sourceTree = "<group>"; };
+		F7B664E71D523C2300DB33E1 /* JSAlbumTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSAlbumTableViewController.m; sourceTree = "<group>"; };
+		F7B664E91D523C4000DB33E1 /* JSPictureWallCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSPictureWallCollectionViewController.h; sourceTree = "<group>"; };
+		F7B664EA1D523C4000DB33E1 /* JSPictureWallCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSPictureWallCollectionViewController.m; sourceTree = "<group>"; };
+		F7B664EC1D5245E000DB33E1 /* JSTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSTabBar.h; sourceTree = "<group>"; };
+		F7B664ED1D5245E000DB33E1 /* JSTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSTabBar.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -187,6 +214,8 @@
 			children = (
 				F7B664C11D5231C700DB33E1 /* JSTabBarController.h */,
 				F7B664C21D5231C700DB33E1 /* JSTabBarController.m */,
+				F7B664EC1D5245E000DB33E1 /* JSTabBar.h */,
+				F7B664ED1D5245E000DB33E1 /* JSTabBar.m */,
 			);
 			path = Main_iPhone;
 			sourceTree = "<group>";
@@ -201,6 +230,8 @@
 		F7B664B81D51A87D00DB33E1 /* iPad */ = {
 			isa = PBXGroup;
 			children = (
+				F7B664D21D523B5400DB33E1 /* Album */,
+				F7B664D31D523B5400DB33E1 /* PictureWall */,
 			);
 			path = iPad;
 			sourceTree = "<group>";
@@ -215,6 +246,12 @@
 		F7B664BA1D51A87D00DB33E1 /* Universal */ = {
 			isa = PBXGroup;
 			children = (
+				F7B664CE1D523B1200DB33E1 /* Home */,
+				F7B664CC1D523B1200DB33E1 /* AboutMe */,
+				F7B664D01D523B1200DB33E1 /* MySpace */,
+				F7B664CF1D523B1200DB33E1 /* MoreApp */,
+				F7B664D11D523B2F00DB33E1 /* MyFried */,
+				F7B664CD1D523B1200DB33E1 /* Compose */,
 			);
 			path = Universal;
 			sourceTree = "<group>";
@@ -235,6 +272,78 @@
 				F7B664CA1D5234B000DB33E1 /* UIImage+Color.m */,
 			);
 			path = UIImage;
+			sourceTree = "<group>";
+		};
+		F7B664CC1D523B1200DB33E1 /* AboutMe */ = {
+			isa = PBXGroup;
+			children = (
+				F7B664D71D523BCA00DB33E1 /* JSAboutMeTableViewController.h */,
+				F7B664D81D523BCA00DB33E1 /* JSAboutMeTableViewController.m */,
+			);
+			path = AboutMe;
+			sourceTree = "<group>";
+		};
+		F7B664CD1D523B1200DB33E1 /* Compose */ = {
+			isa = PBXGroup;
+			children = (
+				F7B664E31D523C0E00DB33E1 /* JSComposeViewController.h */,
+				F7B664E41D523C0E00DB33E1 /* JSComposeViewController.m */,
+			);
+			path = Compose;
+			sourceTree = "<group>";
+		};
+		F7B664CE1D523B1200DB33E1 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				F7B664D41D523BC000DB33E1 /* JSHomeTableViewController.h */,
+				F7B664D51D523BC000DB33E1 /* JSHomeTableViewController.m */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		F7B664CF1D523B1200DB33E1 /* MoreApp */ = {
+			isa = PBXGroup;
+			children = (
+				F7B664DD1D523BF600DB33E1 /* JSMoreAppTableViewController.h */,
+				F7B664DE1D523BF600DB33E1 /* JSMoreAppTableViewController.m */,
+			);
+			path = MoreApp;
+			sourceTree = "<group>";
+		};
+		F7B664D01D523B1200DB33E1 /* MySpace */ = {
+			isa = PBXGroup;
+			children = (
+				F7B664DA1D523BDD00DB33E1 /* JSMySpaceTableViewController.h */,
+				F7B664DB1D523BDD00DB33E1 /* JSMySpaceTableViewController.m */,
+			);
+			path = MySpace;
+			sourceTree = "<group>";
+		};
+		F7B664D11D523B2F00DB33E1 /* MyFried */ = {
+			isa = PBXGroup;
+			children = (
+				F7B664E01D523C0000DB33E1 /* JSMyFriendTableViewController.h */,
+				F7B664E11D523C0000DB33E1 /* JSMyFriendTableViewController.m */,
+			);
+			path = MyFried;
+			sourceTree = "<group>";
+		};
+		F7B664D21D523B5400DB33E1 /* Album */ = {
+			isa = PBXGroup;
+			children = (
+				F7B664E61D523C2300DB33E1 /* JSAlbumTableViewController.h */,
+				F7B664E71D523C2300DB33E1 /* JSAlbumTableViewController.m */,
+			);
+			path = Album;
+			sourceTree = "<group>";
+		};
+		F7B664D31D523B5400DB33E1 /* PictureWall */ = {
+			isa = PBXGroup;
+			children = (
+				F7B664E91D523C4000DB33E1 /* JSPictureWallCollectionViewController.h */,
+				F7B664EA1D523C4000DB33E1 /* JSPictureWallCollectionViewController.m */,
+			);
+			path = PictureWall;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -360,13 +469,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F7B664E51D523C0E00DB33E1 /* JSComposeViewController.m in Sources */,
 				F790100A1D50FCCD0030ACC6 /* main.m in Sources */,
 				F79010061D50FCCD0030ACC6 /* AppDelegate.m in Sources */,
 				F7B664CB1D5234B000DB33E1 /* UIImage+Color.m in Sources */,
+				F7B664D61D523BC000DB33E1 /* JSHomeTableViewController.m in Sources */,
+				F7B664D91D523BCA00DB33E1 /* JSAboutMeTableViewController.m in Sources */,
+				F7B664E81D523C2300DB33E1 /* JSAlbumTableViewController.m in Sources */,
+				F7B664DF1D523BF600DB33E1 /* JSMoreAppTableViewController.m in Sources */,
 				F7B664BD1D51B06800DB33E1 /* JSSplitViewController.m in Sources */,
+				F7B664EB1D523C4000DB33E1 /* JSPictureWallCollectionViewController.m in Sources */,
 				F7B664C31D5231C700DB33E1 /* JSTabBarController.m in Sources */,
+				F7B664E21D523C0000DB33E1 /* JSMyFriendTableViewController.m in Sources */,
 				F7B664C71D5234AA00DB33E1 /* UIColor+RandomColor.m in Sources */,
 				F7B664C01D51C57000DB33E1 /* JSMasterViewController.m in Sources */,
+				F7B664EE1D5245E000DB33E1 /* JSTabBar.m in Sources */,
+				F7B664DC1D523BDD00DB33E1 /* JSMySpaceTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
