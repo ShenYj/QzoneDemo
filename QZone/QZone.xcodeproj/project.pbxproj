@@ -15,6 +15,9 @@
 		F7B664B71D5193BF00DB33E1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7B664B61D5193BF00DB33E1 /* Main.storyboard */; };
 		F7B664BD1D51B06800DB33E1 /* JSSplitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F7B664BC1D51B06800DB33E1 /* JSSplitViewController.m */; };
 		F7B664C01D51C57000DB33E1 /* JSMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F7B664BF1D51C57000DB33E1 /* JSMasterViewController.m */; };
+		F7B664C31D5231C700DB33E1 /* JSTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = F7B664C21D5231C700DB33E1 /* JSTabBarController.m */; };
+		F7B664C71D5234AA00DB33E1 /* UIColor+RandomColor.m in Sources */ = {isa = PBXBuildFile; fileRef = F7B664C61D5234AA00DB33E1 /* UIColor+RandomColor.m */; };
+		F7B664CB1D5234B000DB33E1 /* UIImage+Color.m in Sources */ = {isa = PBXBuildFile; fileRef = F7B664CA1D5234B000DB33E1 /* UIImage+Color.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +37,12 @@
 		F7B664BC1D51B06800DB33E1 /* JSSplitViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSSplitViewController.m; sourceTree = "<group>"; };
 		F7B664BE1D51C57000DB33E1 /* JSMasterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSMasterViewController.h; sourceTree = "<group>"; };
 		F7B664BF1D51C57000DB33E1 /* JSMasterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSMasterViewController.m; sourceTree = "<group>"; };
+		F7B664C11D5231C700DB33E1 /* JSTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSTabBarController.h; sourceTree = "<group>"; };
+		F7B664C21D5231C700DB33E1 /* JSTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSTabBarController.m; sourceTree = "<group>"; };
+		F7B664C51D5234AA00DB33E1 /* UIColor+RandomColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+RandomColor.h"; sourceTree = "<group>"; };
+		F7B664C61D5234AA00DB33E1 /* UIColor+RandomColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+RandomColor.m"; sourceTree = "<group>"; };
+		F7B664C91D5234B000DB33E1 /* UIImage+Color.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Color.h"; sourceTree = "<group>"; };
+		F7B664CA1D5234B000DB33E1 /* UIImage+Color.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Color.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +127,8 @@
 		F79010111D50FCDE0030ACC6 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				F7B664C81D5234B000DB33E1 /* UIImage */,
+				F7B664C41D5234AA00DB33E1 /* UIColor */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -174,6 +185,8 @@
 		F7B664B41D51928C00DB33E1 /* Main_iPhone */ = {
 			isa = PBXGroup;
 			children = (
+				F7B664C11D5231C700DB33E1 /* JSTabBarController.h */,
+				F7B664C21D5231C700DB33E1 /* JSTabBarController.m */,
 			);
 			path = Main_iPhone;
 			sourceTree = "<group>";
@@ -204,6 +217,24 @@
 			children = (
 			);
 			path = Universal;
+			sourceTree = "<group>";
+		};
+		F7B664C41D5234AA00DB33E1 /* UIColor */ = {
+			isa = PBXGroup;
+			children = (
+				F7B664C51D5234AA00DB33E1 /* UIColor+RandomColor.h */,
+				F7B664C61D5234AA00DB33E1 /* UIColor+RandomColor.m */,
+			);
+			path = UIColor;
+			sourceTree = "<group>";
+		};
+		F7B664C81D5234B000DB33E1 /* UIImage */ = {
+			isa = PBXGroup;
+			children = (
+				F7B664C91D5234B000DB33E1 /* UIImage+Color.h */,
+				F7B664CA1D5234B000DB33E1 /* UIImage+Color.m */,
+			);
+			path = UIImage;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -331,7 +362,10 @@
 			files = (
 				F790100A1D50FCCD0030ACC6 /* main.m in Sources */,
 				F79010061D50FCCD0030ACC6 /* AppDelegate.m in Sources */,
+				F7B664CB1D5234B000DB33E1 /* UIImage+Color.m in Sources */,
 				F7B664BD1D51B06800DB33E1 /* JSSplitViewController.m in Sources */,
+				F7B664C31D5231C700DB33E1 /* JSTabBarController.m in Sources */,
+				F7B664C71D5234AA00DB33E1 /* UIColor+RandomColor.m in Sources */,
 				F7B664C01D51C57000DB33E1 /* JSMasterViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

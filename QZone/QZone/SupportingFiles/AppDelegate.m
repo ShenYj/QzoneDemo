@@ -7,6 +7,10 @@
 //
 
 #import "AppDelegate.h"
+#import "JSTabBarController.h"
+#import "JSSplitViewController.h"
+
+
 
 @interface AppDelegate ()
 
@@ -19,6 +23,8 @@
     // Override point for customization after application launch.
     
     
+    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    
     /*
      UIUserInterfaceIdiomUnspecified = -1,
      UIUserInterfaceIdiomPhone NS_ENUM_AVAILABLE_IOS(3_2),      // iPhone and iPod touch style UI
@@ -29,12 +35,18 @@
     
     if (isiPhone) {
         
-        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-        UITabBarController *tabbarController = [storyboard instantiateViewControllerWithIdentifier:@"iPhone"];
-        self.window.rootViewController = tabbarController;
+        JSTabBarController *tabBarController = [[JSTabBarController alloc] init];
+        self.window.rootViewController = tabBarController;
         
+    }else{
+        
+        // 创建splitViewController 在显示前必须设置主视图控制器,可以不设置明细控制器
+        JSSplitViewController *splitViewController = [[JSSplitViewController alloc] init];
+
+        self.window.rootViewController = splitViewController;
     }
-    
+
+    [self.window makeKeyAndVisible];
     
     return YES;
 }

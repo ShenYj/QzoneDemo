@@ -8,17 +8,44 @@
 
 #import "JSSplitViewController.h"
 #import "JSMasterViewController.h"
+#import "UIColor+RandomColor.h"
+
 
 @interface JSSplitViewController ()
+
+
 
 @end
 
 @implementation JSSplitViewController
 
+- (instancetype)init{
+    
+    self = [super init];
+    if (self) {
+        
+        // 创建splitViewController 在显示前必须设置主视图控制器,可以不设置明细控制器
+        // SplitViewController可以通过addChildViewController添加子控制器,但是只有添加的第一个子控制器会被设置在主视图控制器的位置上,第二个控制器会被设置在明细视图控制器的位置上
+        // 允许继续添加,但是不会被显示
+        
+        // 设置主视图
+        JSMasterViewController *masterViewController = [[JSMasterViewController alloc] init];
+        masterViewController.view.backgroundColor = [UIColor randomColor];
+        [self addChildViewController:masterViewController];
+        
+        // 设置详情视图
+        UIViewController *detailViewController = [[UIViewController alloc] init];
+        detailViewController.view.backgroundColor = [UIColor randomColor];
+        [self addChildViewController:detailViewController];
+        
+    }
+    return self;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    
+    // 设置SplitViewController
     [self prepareSplitViewController];
     
 }
@@ -36,7 +63,6 @@
      */
     self.preferredDisplayMode = UISplitViewControllerDisplayModeAllVisible;
     
-    
     // 监听设备朝向变化
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(orientationDidChangeNotification) name:UIDeviceOrientationDidChangeNotification object:nil];
     
@@ -49,26 +75,21 @@
     // 直接设置最大宽度为一个固定值
     
     /*
-     
      static inline BOOL UIDeviceOrientationIsPortrait(UIDeviceOrientation orientation)  __TVOS_PROHIBITED {
      return ((orientation) == UIDeviceOrientationPortrait || (orientation) == UIDeviceOrientationPortraitUpsideDown);
      }
-     
      static inline BOOL UIDeviceOrientationIsLandscape(UIDeviceOrientation orientation)  __TVOS_PROHIBITED {
      return ((orientation) == UIDeviceOrientationLandscapeLeft || (orientation) == UIDeviceOrientationLandscapeRight);
      }
-    
     */
     
     // 根据横竖屏变化,设置不同的主视图宽度
-    if (UIDeviceOrientationIsPortrait([UIDevice currentDevice].orientation)) { // 竖屏
-        
+    if (UIDeviceOrientationIsPortrait([UIDevice currentDevice].orientation)) {
+        // 竖屏
         self.maximumPrimaryColumnWidth = 60;
-        
-    }else { // 横向
-        
+    }else {
+        // 横向
         self.maximumPrimaryColumnWidth = 200;
-        
     }
     
 }
@@ -81,16 +102,17 @@
     // 判断当前的SizeClass,如果为width compact&height regular 则说明正在分屏
     BOOL isTrait = (self.traitCollection.horizontalSizeClass == UIUserInterfaceSizeClassCompact) && (self.traitCollection.verticalSizeClass == UIUserInterfaceSizeClassRegular);
     
+    // 获取SplitViewController的主视图控制器
+    JSMasterViewController *masterViewController = self.viewControllers[0];
+    
     if (isTrait) {
         // 正在分屏
         NSLog(@"正在分屏");
-        JSMasterViewController *masterViewController = self.viewControllers[0];
         [masterViewController showContainerView:isTrait];
         
     }else {
         
         NSLog(@"没有分屏");
-        JSMasterViewController *masterViewController = self.viewControllers[0];
         [masterViewController showContainerView:isTrait];
     }
     
