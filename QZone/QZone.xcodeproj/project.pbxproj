@@ -14,6 +14,7 @@
 		F790100A1D50FCCD0030ACC6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F79010031D50FCCD0030ACC6 /* main.m */; };
 		F7B664B71D5193BF00DB33E1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7B664B61D5193BF00DB33E1 /* Main.storyboard */; };
 		F7B664BD1D51B06800DB33E1 /* JSSplitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F7B664BC1D51B06800DB33E1 /* JSSplitViewController.m */; };
+		F7B664C01D51C57000DB33E1 /* JSMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F7B664BF1D51C57000DB33E1 /* JSMasterViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,8 @@
 		F7B664B61D5193BF00DB33E1 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		F7B664BB1D51B06800DB33E1 /* JSSplitViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSSplitViewController.h; sourceTree = "<group>"; };
 		F7B664BC1D51B06800DB33E1 /* JSSplitViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSSplitViewController.m; sourceTree = "<group>"; };
+		F7B664BE1D51C57000DB33E1 /* JSMasterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSMasterViewController.h; sourceTree = "<group>"; };
+		F7B664BF1D51C57000DB33E1 /* JSMasterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSMasterViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,6 +165,8 @@
 			children = (
 				F7B664BB1D51B06800DB33E1 /* JSSplitViewController.h */,
 				F7B664BC1D51B06800DB33E1 /* JSSplitViewController.m */,
+				F7B664BE1D51C57000DB33E1 /* JSMasterViewController.h */,
+				F7B664BF1D51C57000DB33E1 /* JSMasterViewController.m */,
 			);
 			path = Main_iPad;
 			sourceTree = "<group>";
@@ -327,6 +332,7 @@
 				F790100A1D50FCCD0030ACC6 /* main.m in Sources */,
 				F79010061D50FCCD0030ACC6 /* AppDelegate.m in Sources */,
 				F7B664BD1D51B06800DB33E1 /* JSSplitViewController.m in Sources */,
+				F7B664C01D51C57000DB33E1 /* JSMasterViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -436,7 +442,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = QZone/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "---ShenYJ---.QZone";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -449,7 +455,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = QZone/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "---ShenYJ---.QZone";
 				PRODUCT_NAME = "$(TARGET_NAME)";
