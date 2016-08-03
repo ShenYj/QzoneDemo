@@ -17,6 +17,23 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    /*
+     UIUserInterfaceIdiomUnspecified = -1,
+     UIUserInterfaceIdiomPhone NS_ENUM_AVAILABLE_IOS(3_2),      // iPhone and iPod touch style UI
+     UIUserInterfaceIdiomPad NS_ENUM_AVAILABLE_IOS(3_2),        // iPad style UI
+     UIUserInterfaceIdiomTV NS_ENUM_AVAILABLE_IOS(9_0),         // Apple TV style UI
+     UIUserInterfaceIdiomCarPlay NS_ENUM_AVAILABLE_IOS(9_0),    // CarPlay style UI
+     */
+    
+    if ([UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPhone ) {
+        
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        UITabBarController *tabbarController = [storyboard instantiateViewControllerWithIdentifier:@"iPhone"];
+        self.window.rootViewController = tabbarController;
+        
+    }
+    
     return YES;
 }
 
