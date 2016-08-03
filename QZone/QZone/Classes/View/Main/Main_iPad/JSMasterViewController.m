@@ -7,12 +7,14 @@
 //
 
 #import "JSMasterViewController.h"
+#import "JSTabBarController.h"
+#import "UIColor+RandomColor.h"
 
 
 @interface JSMasterViewController ()
 
 // 主视图容器
-@property (weak, nonatomic) IBOutlet UIView *masterContainerView;
+@property (weak, nonatomic) UIView *masterContainerView;
 
 @end
 
@@ -21,7 +23,20 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self showContainerView:YES];
+#pragma mark -- 代码实现容器视图:
+    
+    //容器视图使用场景:内嵌视图控制器
+    JSTabBarController *tabBarController = [[JSTabBarController alloc] init];
+    tabBarController.view.backgroundColor = [UIColor randomColor];
+    
+    // 添加内嵌控制器为子控制器  (如果只addSubView不托管控制器,就会导致响应者链条断开,监听不到响应事件)
+    // 次控制器的View就相当于容器
+    [self addChildViewController:tabBarController];
+    // 添加内嵌控制器的视图为子视图 让内嵌的内容显示
+    [self.view addSubview:tabBarController.view];
+    
+    // 设置属性引用 不是代码实现容器视图的必须环节(下面需要使用这个容器视图,设置显隐)
+    self.masterContainerView = tabBarController.view;
 }
 
 // 根据是否分屏显隐视图

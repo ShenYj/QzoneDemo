@@ -30,9 +30,6 @@
                             <constraint firstItem="Way-Il-ScG" firstAttribute="top" secondItem="Ffh-9a-oal" secondAttribute="bottom" id="pB3-SP-nWo"/>
                         </constraints>
                     </view>
-                    <connections>
-                        <outlet property="masterContainerView" destination="Way-Il-ScG" id="Npq-UH-6VB"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="E0D-Mt-xJS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
