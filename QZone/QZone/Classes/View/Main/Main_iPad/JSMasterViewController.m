@@ -9,10 +9,9 @@
 #import "JSMasterViewController.h"
 #import "JSTabBarController.h"
 #import "JSMasterViewModel.h"
+#import "JSMasterButton.h"
 
 
-static const CGFloat kMenumButtonPortraitHeight = 60;
-static const CGFloat kMenumButtonLandScapeHeight = 90;
 
 @interface JSMasterViewController ()
 
@@ -38,11 +37,11 @@ static const CGFloat kMenumButtonLandScapeHeight = 90;
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    // 设置菜单区视图
+    [self prepareMenuView];
     // 设置容器视图
     [self prepareContainerView];
     
-    // 设置菜单区视图
-    [self prepareMenuView];
 }
 
 // 设置菜单区视图
@@ -51,8 +50,8 @@ static const CGFloat kMenumButtonLandScapeHeight = 90;
     // 添加子视图(UIButton)
     for (JSMasterItem *item in self.masterViewModel.menumItems) {
         
-        UIButton *button = [[UIButton alloc] init];
-        [button setTitle:item.title forState:UIControlStateNormal];
+        JSMasterButton *button = [[JSMasterButton alloc] initWithItem:item];
+
         
         if (item.isComposeArea) {
             
@@ -63,12 +62,13 @@ static const CGFloat kMenumButtonLandScapeHeight = 90;
             
             // 菜单区
             [self.menuArea_StackView addArrangedSubview:button];
-            [button mas_makeConstraints:^(MASConstraintMaker *make) {
-                make.height.mas_equalTo(kMenumButtonPortraitHeight);
-            }];
+
         }
         
     }
+    
+    // 设置背景色
+    self.view.backgroundColor = [UIColor colorWithWhite:34 / 255.0 alpha:1.0];
 
 }
 

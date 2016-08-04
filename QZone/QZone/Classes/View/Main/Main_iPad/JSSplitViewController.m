@@ -31,7 +31,6 @@
         
         // 设置主视图
         self.masterViewController = [[JSMasterViewController alloc] init];
-        self.masterViewController.view.backgroundColor = [UIColor randomColor];
         [self addChildViewController:self.masterViewController];
         
         // 设置详情视图

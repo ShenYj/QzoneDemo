@@ -28,7 +28,9 @@
 // 宏
 #define isiPhone ([UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPhone) 
 
-
+// 常量
+static const CGFloat kMenumButtonPortraitHeight = 60;
+static const CGFloat kMenumButtonLandScapeHeight = 90;
 
 // NSLog调试
 #ifdef DEBUG
