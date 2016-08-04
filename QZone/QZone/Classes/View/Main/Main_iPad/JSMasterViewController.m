@@ -14,7 +14,6 @@
 static const CGFloat kMenumButtonPortraitHeight = 60;
 static const CGFloat kMenumButtonLandScapeHeight = 90;
 
-
 @interface JSMasterViewController ()
 
 // 主视图容器
@@ -56,11 +55,12 @@ static const CGFloat kMenumButtonLandScapeHeight = 90;
         [button setTitle:item.title forState:UIControlStateNormal];
         
         if (item.isComposeArea) {
-            // 撰写区
             
+            // 撰写区
             [self.composeArea_StackView addArrangedSubview:button];
             
         }else{
+            
             // 菜单区
             [self.menuArea_StackView addArrangedSubview:button];
             [button mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -94,7 +94,7 @@ static const CGFloat kMenumButtonLandScapeHeight = 90;
 // 根据是否分屏显隐视图
 - (void)showContainerView:(BOOL)show{
     
-    // 分平时,代表主视图需要显示为iPhone样式,所以主视图上的容器视图显示(隐藏=NO)
+    // 分平时,代表主视图需要显示为iPhone样式,所以主视图上的容器视图显示( 隐藏=NO )
     self.masterContainerView.hidden = !show;
     
 }
@@ -103,7 +103,7 @@ static const CGFloat kMenumButtonLandScapeHeight = 90;
 - (void)updateSubViewsWithPortrait:(BOOL)portrait{
     
     if (portrait) {
-        
+        // 竖屏
         self.composeArea_StackView.axis = UILayoutConstraintAxisVertical;
         // 更新撰写区约束
         [self.composeArea_StackView mas_updateConstraints:^(MASConstraintMaker *make) {
@@ -112,7 +112,7 @@ static const CGFloat kMenumButtonLandScapeHeight = 90;
         }];
         
     }else{
-        
+        // 横屏
         self.composeArea_StackView.axis = UILayoutConstraintAxisHorizontal;
         [self.composeArea_StackView mas_updateConstraints:^(MASConstraintMaker *make) {
             make.height.mas_equalTo(kMenumButtonLandScapeHeight);
@@ -161,7 +161,6 @@ static const CGFloat kMenumButtonLandScapeHeight = 90;
             make.left.right.mas_equalTo(self.view);
         }];
     }
-    
     
     return _menuArea_StackView;
 }

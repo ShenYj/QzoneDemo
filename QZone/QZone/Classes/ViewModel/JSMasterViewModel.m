@@ -11,39 +11,16 @@
 // 因为加了readOnly修饰,同时重写了getter方法,不会自动生成带下划线的成员变量,所以需要人工合成
 @implementation JSMasterViewModel{
     
-    // 第一种方式
-//    NSArray <JSComposeItem *> *_composeItems;
     NSArray <JSMasterItem *> *_menumItems;
+    
+    // 第一种方式
+    // NSArray <JSComposeItem *> *_composeItems;
+    
 }
 // 第二种方式
 //@synthesize composeItems = _composeItems;
 //@synthesize menumItems = _menumItems;
 
-
-//- (NSArray<JSComposeItem *> *)composeItems{
-//    
-//    if (_composeItems == nil) {
-//        
-//        NSArray *data = @[
-//                          @{ @"title":@"说说", @"imageName":@"", @"composeArea":@YES },
-//                          @{ @"title":@"照片", @"imageName":@"", @"composeArea":@YES },
-//                          @{ @"title":@"日志", @"imageName":@"", @"composeArea":@YES }
-//                          ];
-//        
-//        NSMutableArray *mArr = [NSMutableArray array];
-//        
-//        // 字典转模型
-//        for (NSDictionary *dict in data) {
-//            
-//            JSComposeItem *item = [JSComposeItem itemWithDict:dict];
-//            [mArr addObject:item];
-//        }
-//        
-//        _composeItems = mArr.copy;
-//    }
-//    
-//    return _composeItems;
-//}
 
 - (NSArray<JSMasterItem *> *)menumItems{
     
@@ -75,5 +52,35 @@
     
     return _menumItems;
 }
+
+
+
+
+
+
+//- (NSArray<JSComposeItem *> *)composeItems{
+//
+//    if (_composeItems == nil) {
+//
+//        NSArray *data = @[
+//                          @{ @"title":@"说说", @"imageName":@"", @"composeArea":@YES },
+//                          @{ @"title":@"照片", @"imageName":@"", @"composeArea":@YES },
+//                          @{ @"title":@"日志", @"imageName":@"", @"composeArea":@YES }
+//                          ];
+//
+//        NSMutableArray *mArr = [NSMutableArray array];
+//
+//        // 字典转模型
+//        for (NSDictionary *dict in data) {
+//
+//            JSComposeItem *item = [JSComposeItem itemWithDict:dict];
+//            [mArr addObject:item];
+//        }
+//
+//        _composeItems = mArr.copy;
+//    }
+//
+//    return _composeItems;
+//}
 
 @end

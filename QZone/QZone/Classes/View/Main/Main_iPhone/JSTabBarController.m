@@ -11,7 +11,7 @@
 #import "JSHomeTableViewController.h"
 #import "JSAboutMeTableViewController.h"
 #import "JSMoreAppTableViewController.h"
-
+#import "JSMySpaceTableViewController.h"
 
 
 
@@ -33,10 +33,10 @@
     [self setValue:tabBar forKey:@"tabBar"];
     
     // 添加子控制器
-    [self addChildViewControllers:[[UIViewController alloc] init] withImageName:@"tabbar_icon_auth" withTitle:@"动态"];
-    [self addChildViewControllers:[[UIViewController alloc] init] withImageName:@"tabbar_icon_at" withTitle:@"与我相关"];
-    [self addChildViewControllers:[[UIViewController alloc] init] withImageName:@"tabbar_icon_space" withTitle:@"我的"];
-    [self addChildViewControllers:[[UIViewController alloc] init] withImageName:@"tabbar_icon_more" withTitle:@"玩吧"];
+    [self addChildViewControllers:[[JSHomeTableViewController alloc] init] withImageName:@"tabbar_icon_auth" withTitle:@"动态"];
+    [self addChildViewControllers:[[JSAboutMeTableViewController alloc] init] withImageName:@"tabbar_icon_at" withTitle:@"与我相关"];
+    [self addChildViewControllers:[[JSMySpaceTableViewController alloc] init] withImageName:@"tabbar_icon_space" withTitle:@"我的"];
+    [self addChildViewControllers:[[JSMoreAppTableViewController alloc] init] withImageName:@"tabbar_icon_more" withTitle:@"玩吧"];
     
 }
 

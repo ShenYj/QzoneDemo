@@ -107,19 +107,20 @@
 - (void)traitCollectionDidChange:(UITraitCollection *)previousTraitCollection{
     
     // 判断当前的SizeClass,如果为width compact&height regular 则说明正在分屏
-    BOOL isTrait = (self.traitCollection.horizontalSizeClass == UIUserInterfaceSizeClassCompact) && (self.traitCollection.verticalSizeClass == UIUserInterfaceSizeClassRegular);
-
+    BOOL showContainer = (self.traitCollection.horizontalSizeClass == UIUserInterfaceSizeClassCompact) && (self.traitCollection.verticalSizeClass == UIUserInterfaceSizeClassRegular);
     
-    if (isTrait) {
-        // 正在分屏
-        NSLog(@"正在分屏");
-        [self.masterViewController showContainerView:isTrait];
-        
-    }else {
-        
-        NSLog(@"没有分屏");
-        [self.masterViewController showContainerView:isTrait];
-    }
+    [self.masterViewController showContainerView:showContainer];
+    
+//    if (showContainer) {
+//        // 正在分屏
+//        NSLog(@"正在分屏");
+//        [self.masterViewController showContainerView:isTrait];
+//        
+//    }else {
+//        
+//        NSLog(@"没有分屏");
+//        [self.masterViewController showContainerView:isTrait];
+//    }
     
 }
 
