@@ -8,7 +8,6 @@
 
 #import "JSTabBarController.h"
 #import "JSTabBar.h"
-#import "UIColor+RandomColor.h"
 #import "JSHomeTableViewController.h"
 #import "JSAboutMeTableViewController.h"
 #import "JSMoreAppTableViewController.h"

@@ -16,6 +16,13 @@
 // 主视图容器
 @property (weak, nonatomic) UIView *masterContainerView;
 
+// 撰写区StackView
+@property (nonatomic,strong) UIStackView *composeArea_StackView;
+
+// 菜单区StackView
+@property (nonatomic,strong) UIStackView *menuArea_StackView;
+
+
 @end
 
 @implementation JSMasterViewController
@@ -23,7 +30,52 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    // 设置容器视图
+    [self prepareContainerView];
+    
+    // 设置编辑区视图
+    [self prepareComposeView];
+    
+    // 设置菜单区视图
+    [self prepareMenuView];
+}
+
+// 设置菜单区视图
+- (void)prepareMenuView{
+    
+    
+}
+
+// 设置编辑区视图
+- (void)prepareComposeView{
+    
+    self.composeArea_StackView.distribution = UIStackViewDistributionFillEqually;
+    
+    [self.composeArea_StackView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.bottom.left.right.mas_equalTo(self.view);
+        make.height.mas_equalTo(90);
+    }];
+    
+    // 添加子视图(UIButton)
+    NSArray *composeItems = @[
+                              @{@"title":@"说说"},
+                              @{@"title":@"照片"},
+                              @{@"title":@"日志"}
+                              ];
+    
+    for (NSDictionary *dict in composeItems) {
+        
+        UIButton *button = [[UIButton alloc] init];
+        [self.composeArea_StackView addArrangedSubview:button];
+        [button setTitle:dict[@"title"] forState:UIControlStateNormal];
+        
+    }
+    
+    
+}
+
 #pragma mark -- 代码实现容器视图:
+- (void)prepareContainerView{
     
     //容器视图使用场景:内嵌视图控制器
     JSTabBarController *tabBarController = [[JSTabBarController alloc] init];
@@ -37,6 +89,7 @@
     
     // 设置属性引用 不是代码实现容器视图的必须环节(下面需要使用这个容器视图,设置显隐)
     self.masterContainerView = tabBarController.view;
+    
 }
 
 // 根据是否分屏显隐视图
@@ -50,6 +103,28 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+
+
+#pragma mark -- 懒加载
+
+- (UIStackView *)composeArea_StackView{
+    
+    if (_composeArea_StackView == nil) {
+        _composeArea_StackView = [[UIStackView alloc] init];
+        [self.view addSubview:_composeArea_StackView];
+    }
+    return _composeArea_StackView;
+}
+
+- (UIStackView *)menuArea_StackView{
+    
+    if (_menuArea_StackView == nil) {
+        _menuArea_StackView = [[UIStackView alloc] init];
+        [self.view addSubview:_menuArea_StackView];
+    }
+    return _menuArea_StackView;
 }
 
 /*

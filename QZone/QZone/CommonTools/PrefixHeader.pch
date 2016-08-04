@@ -19,6 +19,11 @@
 // 头文件
 #import "Masonry.h"
 #import <UIKit/UIKit.h>
+#import "UIImage+Color.h"
+#import "UIColor+RandomColor.h"
+
+
+
 
 // 宏
 #define isiPhone ([UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPhone) 

@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface JSSplitViewController : UISplitViewController <UITraitEnvironment>
+@interface JSSplitViewController : UISplitViewController
 
 @end
