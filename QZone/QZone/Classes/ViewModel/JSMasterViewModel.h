@@ -7,13 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "JSComposeItem.h"
+#import "JSMasterItem.h"
 
 @interface JSMasterViewModel : NSObject
 
 // 撰写区模型数组
-@property (nonatomic,strong) NSArray <JSComposeItem *> *composeItems;
+//@property (nonatomic,strong,readonly) NSArray <JSComposeItem *> *composeItems;
 // 菜单区模型数组
-@property (nonatomic,strong) NSArray <JSComposeItem *> *menumItems;
+@property (nonatomic,strong,readonly) NSArray <JSMasterItem *> *menumItems;
 
 @end

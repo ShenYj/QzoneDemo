@@ -6,14 +6,14 @@
 //  Copyright © 2016年 ___ShenYJ___. All rights reserved.
 //
 
-#import "JSComposeItem.h"
+#import "JSMasterItem.h"
 
-@implementation JSComposeItem
+@implementation JSMasterItem
 
 + (instancetype)itemWithDict:(NSDictionary *)dict{
     
     // 创建模型对象
-    JSComposeItem *item = [[self alloc] init];
+    JSMasterItem *item = [[self alloc] init];
     // KVC
     [item setValuesForKeysWithDictionary:dict];
     

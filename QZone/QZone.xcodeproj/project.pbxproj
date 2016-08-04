@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		D76879037D5D18FEDE538BC1 /* libPods-QZone.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E5D7B098328E2298920E4DF7 /* libPods-QZone.a */; };
-		F73EEB9B1D52FF0000582D59 /* JSComposeItem.m in Sources */ = {isa = PBXBuildFile; fileRef = F73EEB9A1D52FF0000582D59 /* JSComposeItem.m */; };
+		F73EEB9B1D52FF0000582D59 /* JSMasterItem.m in Sources */ = {isa = PBXBuildFile; fileRef = F73EEB9A1D52FF0000582D59 /* JSMasterItem.m */; };
 		F73EEB9E1D52FFFF00582D59 /* JSMasterViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F73EEB9D1D52FFFF00582D59 /* JSMasterViewModel.m */; };
 		F79010061D50FCCD0030ACC6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F7900FFD1D50FCCD0030ACC6 /* AppDelegate.m */; };
 		F79010071D50FCCD0030ACC6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F7900FFE1D50FCCD0030ACC6 /* Assets.xcassets */; };
@@ -35,8 +35,8 @@
 		AA94F81B11ACBD83F034B28E /* Pods-QZone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QZone.release.xcconfig"; path = "Pods/Target Support Files/Pods-QZone/Pods-QZone.release.xcconfig"; sourceTree = "<group>"; };
 		E5D7B098328E2298920E4DF7 /* libPods-QZone.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-QZone.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC5270C04077017AC9791C22 /* Pods-QZone.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QZone.debug.xcconfig"; path = "Pods/Target Support Files/Pods-QZone/Pods-QZone.debug.xcconfig"; sourceTree = "<group>"; };
-		F73EEB991D52FF0000582D59 /* JSComposeItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSComposeItem.h; sourceTree = "<group>"; };
-		F73EEB9A1D52FF0000582D59 /* JSComposeItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSComposeItem.m; sourceTree = "<group>"; };
+		F73EEB991D52FF0000582D59 /* JSMasterItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSMasterItem.h; sourceTree = "<group>"; };
+		F73EEB9A1D52FF0000582D59 /* JSMasterItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSMasterItem.m; sourceTree = "<group>"; };
 		F73EEB9C1D52FFFF00582D59 /* JSMasterViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSMasterViewModel.h; sourceTree = "<group>"; };
 		F73EEB9D1D52FFFF00582D59 /* JSMasterViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSMasterViewModel.m; sourceTree = "<group>"; };
 		F7900FE01D50F94C0030ACC6 /* QZone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QZone.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -179,8 +179,8 @@
 		F7B664B01D51928C00DB33E1 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				F73EEB991D52FF0000582D59 /* JSComposeItem.h */,
-				F73EEB9A1D52FF0000582D59 /* JSComposeItem.m */,
+				F73EEB991D52FF0000582D59 /* JSMasterItem.h */,
+				F73EEB9A1D52FF0000582D59 /* JSMasterItem.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -491,7 +491,7 @@
 				F7B664BD1D51B06800DB33E1 /* JSSplitViewController.m in Sources */,
 				F7B664EB1D523C4000DB33E1 /* JSPictureWallCollectionViewController.m in Sources */,
 				F7B664C31D5231C700DB33E1 /* JSTabBarController.m in Sources */,
-				F73EEB9B1D52FF0000582D59 /* JSComposeItem.m in Sources */,
+				F73EEB9B1D52FF0000582D59 /* JSMasterItem.m in Sources */,
 				F7B664E21D523C0000DB33E1 /* JSMyFriendTableViewController.m in Sources */,
 				F7B664C71D5234AA00DB33E1 /* UIColor+RandomColor.m in Sources */,
 				F7B664C01D51C57000DB33E1 /* JSMasterViewController.m in Sources */,

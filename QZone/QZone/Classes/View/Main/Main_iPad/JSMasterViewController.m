@@ -42,9 +42,6 @@ static const CGFloat kMenumButtonLandScapeHeight = 90;
     // 设置容器视图
     [self prepareContainerView];
     
-    // 设置编辑区视图
-    [self prepareComposeView];
-    
     // 设置菜单区视图
     [self prepareMenuView];
 }
@@ -52,54 +49,29 @@ static const CGFloat kMenumButtonLandScapeHeight = 90;
 // 设置菜单区视图
 - (void)prepareMenuView{
     
-    // 设置为垂直排列
-    self.menuArea_StackView.axis = UILayoutConstraintAxisVertical;
-    
-    [self.menuArea_StackView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.bottom.mas_equalTo(self.composeArea_StackView.mas_top);
-        make.left.right.mas_equalTo(self.view);
-    }];
-    
     // 添加子视图(UIButton)
-    for (JSComposeItem *item in self.masterViewModel.menumItems) {
+    for (JSMasterItem *item in self.masterViewModel.menumItems) {
         
         UIButton *button = [[UIButton alloc] init];
-        [self.menuArea_StackView addArrangedSubview:button];
         [button setTitle:item.title forState:UIControlStateNormal];
         
+        if (item.isComposeArea) {
+            // 撰写区
+            
+            [self.composeArea_StackView addArrangedSubview:button];
+            
+        }else{
+            // 菜单区
+            [self.menuArea_StackView addArrangedSubview:button];
+            [button mas_makeConstraints:^(MASConstraintMaker *make) {
+                make.height.mas_equalTo(kMenumButtonPortraitHeight);
+            }];
+        }
         
-        [button mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.height.mas_equalTo(kMenumButtonPortraitHeight);
-        }];
     }
 
 }
 
-// 设置编辑区视图
-- (void)prepareComposeView{
-    
-    self.composeArea_StackView.distribution = UIStackViewDistributionFillEqually;
-    
-    [self.composeArea_StackView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.bottom.left.right.mas_equalTo(self.view);
-        make.height.mas_equalTo(kMenumButtonLandScapeHeight);
-    }];
-    
-    // 添加子视图(UIButton)
-    
-    for (JSComposeItem *item in self.masterViewModel.composeItems) {
-        
-        UIButton *button = [[UIButton alloc] init];
-        
-        [button setTitle:item.title forState:UIControlStateNormal];
-        
-        [self.composeArea_StackView addArrangedSubview:button];
-        
-
-    }
-    
-    
-}
 
 #pragma mark -- 代码实现容器视图:
 - (void)prepareContainerView{
@@ -126,6 +98,7 @@ static const CGFloat kMenumButtonLandScapeHeight = 90;
     self.masterContainerView.hidden = !show;
     
 }
+
 // 根据横竖屏设置子视图布局
 - (void)updateSubViewsWithPortrait:(BOOL)portrait{
     
@@ -163,6 +136,14 @@ static const CGFloat kMenumButtonLandScapeHeight = 90;
     if (_composeArea_StackView == nil) {
         _composeArea_StackView = [[UIStackView alloc] init];
         [self.view addSubview:_composeArea_StackView];
+        
+        self.composeArea_StackView.distribution = UIStackViewDistributionFillEqually;
+        
+        [self.composeArea_StackView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.bottom.left.right.mas_equalTo(self.view);
+            make.height.mas_equalTo(kMenumButtonLandScapeHeight);
+        }];
+        
     }
     return _composeArea_StackView;
 }
@@ -172,7 +153,16 @@ static const CGFloat kMenumButtonLandScapeHeight = 90;
     if (_menuArea_StackView == nil) {
         _menuArea_StackView = [[UIStackView alloc] init];
         [self.view addSubview:_menuArea_StackView];
+        // 设置为垂直排列
+        self.menuArea_StackView.axis = UILayoutConstraintAxisVertical;
+        
+        [self.menuArea_StackView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.bottom.mas_equalTo(self.composeArea_StackView.mas_top);
+            make.left.right.mas_equalTo(self.view);
+        }];
     }
+    
+    
     return _menuArea_StackView;
 }
 

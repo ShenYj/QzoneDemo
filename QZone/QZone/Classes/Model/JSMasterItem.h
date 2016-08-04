@@ -9,12 +9,14 @@
 #import <Foundation/Foundation.h>
 
 // 撰写区按钮模型类 记录撰写区按钮的数据
-@interface JSComposeItem : NSObject
+@interface JSMasterItem : NSObject
 
 // 按钮的标题
 @property (nonatomic,copy) NSString *title;
 // 按钮的图片名
 @property (nonatomic,copy) NSString *imageName;
+// 按钮所处区域标识
+@property (nonatomic,assign,getter=isComposeArea) BOOL composeArea;
 
 // 类方法
 + (instancetype)itemWithDict:(NSDictionary *)dict;
