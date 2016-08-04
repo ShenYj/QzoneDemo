@@ -10,6 +10,9 @@
 #import "JSTabBarController.h"
 #import "UIColor+RandomColor.h"
 
+static const CGFloat kMenumButtonPortraitHeight = 60;
+static const CGFloat kMenumButtonLandScapeHeight = 90;
+
 
 @interface JSMasterViewController ()
 
@@ -69,7 +72,7 @@
         
         
         [button mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.height.mas_equalTo(60);
+            make.height.mas_equalTo(kMenumButtonPortraitHeight);
         }];
     }
 
@@ -82,7 +85,7 @@
     
     [self.composeArea_StackView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.bottom.left.right.mas_equalTo(self.view);
-        make.height.mas_equalTo(90);
+        make.height.mas_equalTo(kMenumButtonLandScapeHeight);
     }];
     
     // 添加子视图(UIButton)
@@ -136,7 +139,7 @@
         self.composeArea_StackView.axis = UILayoutConstraintAxisVertical;
         // 更新撰写区约束
         [self.composeArea_StackView mas_updateConstraints:^(MASConstraintMaker *make) {
-            make.height.mas_equalTo(3 * 60);
+            make.height.mas_equalTo(self.composeArea_StackView.subviews.count * kMenumButtonPortraitHeight);
             make.bottom.mas_equalTo(self.view).mas_offset(-30);
         }];
         
@@ -144,7 +147,7 @@
         
         self.composeArea_StackView.axis = UILayoutConstraintAxisHorizontal;
         [self.composeArea_StackView mas_updateConstraints:^(MASConstraintMaker *make) {
-            make.height.mas_equalTo(90);
+            make.height.mas_equalTo(kMenumButtonLandScapeHeight);
             make.bottom.mas_equalTo(self.view);
         }];
     }

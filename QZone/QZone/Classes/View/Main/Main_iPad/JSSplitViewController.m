@@ -13,7 +13,8 @@
 
 @interface JSSplitViewController ()
 
-
+// 提取主视图,避免多次提取
+@property (nonatomic,strong) JSMasterViewController *masterViewController;
 
 @end
 
@@ -29,9 +30,9 @@
         // 允许继续添加,但是不会被显示
         
         // 设置主视图
-        JSMasterViewController *masterViewController = [[JSMasterViewController alloc] init];
-        masterViewController.view.backgroundColor = [UIColor randomColor];
-        [self addChildViewController:masterViewController];
+        self.masterViewController = [[JSMasterViewController alloc] init];
+        self.masterViewController.view.backgroundColor = [UIColor randomColor];
+        [self addChildViewController:self.masterViewController];
         
         // 设置详情视图
         UIViewController *detailViewController = [[UIViewController alloc] init];
@@ -95,8 +96,8 @@
         self.maximumPrimaryColumnWidth = 200;
     }
     
-    JSMasterViewController *masterViewController = self.viewControllers[0];
-    [masterViewController updateSubViewsWithPortrait:UIDeviceOrientationIsPortrait([UIDevice currentDevice].orientation)];
+    // 根据横竖屏更新撰写区子控件布局
+    [self.masterViewController updateSubViewsWithPortrait:isPortrait];
     
 }
 
@@ -107,19 +108,17 @@
     
     // 判断当前的SizeClass,如果为width compact&height regular 则说明正在分屏
     BOOL isTrait = (self.traitCollection.horizontalSizeClass == UIUserInterfaceSizeClassCompact) && (self.traitCollection.verticalSizeClass == UIUserInterfaceSizeClassRegular);
-    
-    // 获取SplitViewController的主视图控制器
-    JSMasterViewController *masterViewController = self.viewControllers[0];
+
     
     if (isTrait) {
         // 正在分屏
         NSLog(@"正在分屏");
-        [masterViewController showContainerView:isTrait];
+        [self.masterViewController showContainerView:isTrait];
         
     }else {
         
         NSLog(@"没有分屏");
-        [masterViewController showContainerView:isTrait];
+        [self.masterViewController showContainerView:isTrait];
     }
     
 }
