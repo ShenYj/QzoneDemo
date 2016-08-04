@@ -128,6 +128,27 @@
     self.masterContainerView.hidden = !show;
     
 }
+// 根据横竖屏设置子视图布局
+- (void)updateSubViewsWithPortrait:(BOOL)portrait{
+    
+    if (portrait) {
+        
+        self.composeArea_StackView.axis = UILayoutConstraintAxisVertical;
+        // 更新撰写区约束
+        [self.composeArea_StackView mas_updateConstraints:^(MASConstraintMaker *make) {
+            make.height.mas_equalTo(3 * 60);
+            make.bottom.mas_equalTo(self.view).mas_offset(-30);
+        }];
+        
+    }else{
+        
+        self.composeArea_StackView.axis = UILayoutConstraintAxisHorizontal;
+        [self.composeArea_StackView mas_updateConstraints:^(MASConstraintMaker *make) {
+            make.height.mas_equalTo(90);
+            make.bottom.mas_equalTo(self.view);
+        }];
+    }
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

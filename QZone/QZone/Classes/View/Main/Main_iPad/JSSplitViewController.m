@@ -83,14 +83,20 @@
      }
     */
     
+    BOOL isPortrait = UIDeviceOrientationIsPortrait([UIDevice currentDevice].orientation);
+    
     // 根据横竖屏变化,设置不同的主视图宽度
-    if (UIDeviceOrientationIsPortrait([UIDevice currentDevice].orientation)) {
+    if (isPortrait) {
         // 竖屏
         self.maximumPrimaryColumnWidth = 60;
+        
     }else {
         // 横向
         self.maximumPrimaryColumnWidth = 200;
     }
+    
+    JSMasterViewController *masterViewController = self.viewControllers[0];
+    [masterViewController updateSubViewsWithPortrait:UIDeviceOrientationIsPortrait([UIDevice currentDevice].orientation)];
     
 }
 
