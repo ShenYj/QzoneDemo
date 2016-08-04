@@ -43,7 +43,36 @@
 // 设置菜单区视图
 - (void)prepareMenuView{
     
+    // 设置为垂直排列
+    self.menuArea_StackView.axis = UILayoutConstraintAxisVertical;
     
+    [self.menuArea_StackView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.bottom.mas_equalTo(self.composeArea_StackView.mas_top);
+        make.left.right.mas_equalTo(self.view);
+    }];
+    
+    // 添加子视图(UIButton)
+    NSArray *composeItems = @[
+                              @{@"title":@"全部动态"},
+                              @{@"title":@"与我有关"},
+                              @{@"title":@"照片墙"},
+                              @{@"title":@"电子相框"},
+                              @{@"title":@"好友"},
+                              @{@"title":@"更多"}
+                              ];
+    
+    for (NSDictionary *dict in composeItems) {
+        
+        UIButton *button = [[UIButton alloc] init];
+        [self.menuArea_StackView addArrangedSubview:button];
+        [button setTitle:dict[@"title"] forState:UIControlStateNormal];
+        
+        
+        [button mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.height.mas_equalTo(60);
+        }];
+    }
+
 }
 
 // 设置编辑区视图
@@ -68,7 +97,7 @@
         UIButton *button = [[UIButton alloc] init];
         [self.composeArea_StackView addArrangedSubview:button];
         [button setTitle:dict[@"title"] forState:UIControlStateNormal];
-        
+
     }
     
     
