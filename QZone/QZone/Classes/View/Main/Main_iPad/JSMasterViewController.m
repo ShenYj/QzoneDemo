@@ -8,7 +8,8 @@
 
 #import "JSMasterViewController.h"
 #import "JSTabBarController.h"
-#import "UIColor+RandomColor.h"
+#import "JSMasterViewModel.h"
+
 
 static const CGFloat kMenumButtonPortraitHeight = 60;
 static const CGFloat kMenumButtonLandScapeHeight = 90;
@@ -25,8 +26,13 @@ static const CGFloat kMenumButtonLandScapeHeight = 90;
 // 菜单区StackView
 @property (nonatomic,strong) UIStackView *menuArea_StackView;
 
+// 主视图模型
+@property (nonatomic,strong) JSMasterViewModel *masterViewModel;
+
 
 @end
+
+
 
 @implementation JSMasterViewController
 
@@ -55,20 +61,11 @@ static const CGFloat kMenumButtonLandScapeHeight = 90;
     }];
     
     // 添加子视图(UIButton)
-    NSArray *composeItems = @[
-                              @{@"title":@"全部动态"},
-                              @{@"title":@"与我有关"},
-                              @{@"title":@"照片墙"},
-                              @{@"title":@"电子相框"},
-                              @{@"title":@"好友"},
-                              @{@"title":@"更多"}
-                              ];
-    
-    for (NSDictionary *dict in composeItems) {
+    for (JSComposeItem *item in self.masterViewModel.menumItems) {
         
         UIButton *button = [[UIButton alloc] init];
         [self.menuArea_StackView addArrangedSubview:button];
-        [button setTitle:dict[@"title"] forState:UIControlStateNormal];
+        [button setTitle:item.title forState:UIControlStateNormal];
         
         
         [button mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -89,17 +86,15 @@ static const CGFloat kMenumButtonLandScapeHeight = 90;
     }];
     
     // 添加子视图(UIButton)
-    NSArray *composeItems = @[
-                              @{@"title":@"说说"},
-                              @{@"title":@"照片"},
-                              @{@"title":@"日志"}
-                              ];
     
-    for (NSDictionary *dict in composeItems) {
+    for (JSComposeItem *item in self.masterViewModel.composeItems) {
         
         UIButton *button = [[UIButton alloc] init];
+        
+        [button setTitle:item.title forState:UIControlStateNormal];
+        
         [self.composeArea_StackView addArrangedSubview:button];
-        [button setTitle:dict[@"title"] forState:UIControlStateNormal];
+        
 
     }
     
@@ -153,6 +148,7 @@ static const CGFloat kMenumButtonLandScapeHeight = 90;
     }
 }
 
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -178,6 +174,14 @@ static const CGFloat kMenumButtonLandScapeHeight = 90;
         [self.view addSubview:_menuArea_StackView];
     }
     return _menuArea_StackView;
+}
+
+- (JSMasterViewModel *)masterViewModel{
+    
+    if (_masterViewModel == nil) {
+        _masterViewModel = [[JSMasterViewModel alloc] init];
+    }
+    return _masterViewModel;
 }
 
 /*
