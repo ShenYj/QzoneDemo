@@ -27,7 +27,7 @@
 
 // 宏
 #define isiPhone ([UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPhone) 
-
+#define kbackgroundColor [UIColor colorWithWhite:34 / 255.0 alpha:1.0]
 // 常量
 static const CGFloat kMenumButtonPortraitHeight = 60;
 static const CGFloat kMenumButtonLandScapeHeight = 90;

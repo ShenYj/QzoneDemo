@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		D76879037D5D18FEDE538BC1 /* libPods-QZone.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E5D7B098328E2298920E4DF7 /* libPods-QZone.a */; };
+		F70DAE2D1D5466F6002D15DD /* JSDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F70DAE2C1D5466F6002D15DD /* JSDetailViewController.m */; };
 		F73EEB9B1D52FF0000582D59 /* JSMasterItem.m in Sources */ = {isa = PBXBuildFile; fileRef = F73EEB9A1D52FF0000582D59 /* JSMasterItem.m */; };
 		F73EEB9E1D52FFFF00582D59 /* JSMasterViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F73EEB9D1D52FFFF00582D59 /* JSMasterViewModel.m */; };
 		F73EEBA11D53898800582D59 /* JSMasterButton.m in Sources */ = {isa = PBXBuildFile; fileRef = F73EEBA01D53898800582D59 /* JSMasterButton.m */; };
@@ -36,6 +37,8 @@
 		AA94F81B11ACBD83F034B28E /* Pods-QZone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QZone.release.xcconfig"; path = "Pods/Target Support Files/Pods-QZone/Pods-QZone.release.xcconfig"; sourceTree = "<group>"; };
 		E5D7B098328E2298920E4DF7 /* libPods-QZone.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-QZone.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC5270C04077017AC9791C22 /* Pods-QZone.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QZone.debug.xcconfig"; path = "Pods/Target Support Files/Pods-QZone/Pods-QZone.debug.xcconfig"; sourceTree = "<group>"; };
+		F70DAE2B1D5466F6002D15DD /* JSDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSDetailViewController.h; sourceTree = "<group>"; };
+		F70DAE2C1D5466F6002D15DD /* JSDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSDetailViewController.m; sourceTree = "<group>"; };
 		F73EEB991D52FF0000582D59 /* JSMasterItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSMasterItem.h; sourceTree = "<group>"; };
 		F73EEB9A1D52FF0000582D59 /* JSMasterItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSMasterItem.m; sourceTree = "<group>"; };
 		F73EEB9C1D52FFFF00582D59 /* JSMasterViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSMasterViewModel.h; sourceTree = "<group>"; };
@@ -226,6 +229,8 @@
 				F7B664BB1D51B06800DB33E1 /* JSSplitViewController.h */,
 				F7B664BC1D51B06800DB33E1 /* JSSplitViewController.m */,
 				F73EEBA21D53899D00582D59 /* Master */,
+				F70DAE2B1D5466F6002D15DD /* JSDetailViewController.h */,
+				F70DAE2C1D5466F6002D15DD /* JSDetailViewController.m */,
 			);
 			path = Main_iPad;
 			sourceTree = "<group>";
@@ -502,6 +507,7 @@
 				F7B664D91D523BCA00DB33E1 /* JSAboutMeTableViewController.m in Sources */,
 				F7B664E81D523C2300DB33E1 /* JSAlbumTableViewController.m in Sources */,
 				F7B664DF1D523BF600DB33E1 /* JSMoreAppTableViewController.m in Sources */,
+				F70DAE2D1D5466F6002D15DD /* JSDetailViewController.m in Sources */,
 				F7B664BD1D51B06800DB33E1 /* JSSplitViewController.m in Sources */,
 				F7B664EB1D523C4000DB33E1 /* JSPictureWallCollectionViewController.m in Sources */,
 				F7B664C31D5231C700DB33E1 /* JSTabBarController.m in Sources */,

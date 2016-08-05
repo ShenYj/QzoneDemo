@@ -8,7 +8,8 @@
 
 #import "JSSplitViewController.h"
 #import "JSMasterViewController.h"
-#import "UIColor+RandomColor.h"
+
+
 
 
 @interface JSSplitViewController ()
@@ -34,10 +35,9 @@
         [self addChildViewController:self.masterViewController];
         
         // 设置详情视图
-        UIViewController *detailViewController = [[UIViewController alloc] init];
-        detailViewController.view.backgroundColor = [UIColor randomColor];
-        [self addChildViewController:detailViewController];
-        
+//        UIViewController *detailViewController = [[UIViewController alloc] init];
+//        [self addChildViewController:detailViewController];
+//
     }
     return self;
 }
