@@ -12,7 +12,35 @@
 
 @end
 
-@implementation JSComposeViewController
+@implementation JSComposeViewController{
+    
+    NSString *_navigationTitle;
+}
+
+
+- (instancetype)initWithTitle:(NSString *)title{
+    
+    self = [super init];
+    if (self) {
+        _navigationTitle = title;
+        
+        [self prepareComposeView];
+    }
+    return self;
+}
+
+// 设置撰写控制器
+- (void)prepareComposeView{
+    
+    self.title = _navigationTitle;
+    
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"返回" style:UIBarButtonItemStylePlain target:self action:@selector(clickLeftBarButtonItem:)];
+}
+
+- (void)clickLeftBarButtonItem:(UIBarButtonItem *)sender{
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -23,6 +51,8 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+
 
 /*
 #pragma mark - Navigation

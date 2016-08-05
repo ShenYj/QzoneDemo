@@ -11,7 +11,7 @@
 #import "JSMasterViewModel.h"
 #import "JSMasterButton.h"
 #import "JSDetailViewController.h"
-
+#import "JSComposeViewController.h"
 
 @interface JSMasterViewController ()
 
@@ -99,7 +99,6 @@
         
         JSMasterButton *button = [[JSMasterButton alloc] initWithItem:item];
 
-        
         if (item.isComposeArea) {
             
             // 撰写区
@@ -122,7 +121,14 @@
     // 设置默认选中按钮
     JSMasterButton *button = self.menuArea_StackView.subviews[0];
     [self clickMasterButton:button];
-
+    
+    /*   崩溃报错:  reason: '*** Collection <__NSArrayM: 0x7fe3dbc11bc0> was mutated while being enumerated.'
+                原因:在可变集合进行快速遍历时,如果修改了其中元素的值就会崩溃报错 (for ,in快速遍历为了提高性能,内部使用了迭代器模式,根据当前遍历的数据选择不同的算法进行遍历,一旦遍历过程中修改了数据,会导致算法使用不正常,最终数据错误,iOS直接选择遇到修改立刻崩溃)
+            这种问题一般都是运行时报错,出错的原因一般都是多线程导致的,一次调用_loadNewSubviews时,开始进行数据处理(快速遍历+改值),正好在第一次正在改值时,第二次调用了_loadNewSubviews方法开始尽心更快速遍历,导致崩溃
+     
+     解决此类问题一般两种方式: 1.设置延迟  2.去掉其中一次操作
+     */
+    
 }
 
 #pragma mark -- 事件响应
@@ -138,6 +144,22 @@
     sender.selected = YES;
     self.selectedButton = sender;
     
+    // 判断按钮类型
+    if (sender.item.isComposeArea) {
+        // 撰写区
+        JSComposeViewController *composeViewController = [[JSComposeViewController alloc] initWithTitle:sender.item.title];
+        composeViewController.view.backgroundColor = [UIColor randomColor];
+        UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:composeViewController];
+        
+        // 设置modal展示样式
+        navigationController.modalPresentationStyle = UIModalPresentationFormSheet;
+        
+        // 进行modal展示
+        [self presentViewController:navigationController animated:YES completion:nil];
+        
+        
+        return;
+    }
     
     // 如果缓存中存在子视图控制器,直接获取
     JSDetailViewController *detailViewController = self.subViewControllersCache[sender.item.title];
@@ -173,6 +195,7 @@
 //    [self.splitViewController showViewController:master sender:self];
     // 切换明细视图控制器
 //    [self.splitViewController showViewController:detail sender:self.splitViewController.viewControllers[1]];
+    
     
     
     

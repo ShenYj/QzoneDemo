@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+
+
 @interface JSComposeViewController : UIViewController
+
+- (instancetype)initWithTitle:(NSString *)title;
 
 @end
