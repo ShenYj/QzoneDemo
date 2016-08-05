@@ -27,6 +27,11 @@
 // 主视图模型
 @property (nonatomic,strong) JSMasterViewModel *masterViewModel;
 
+// 头像按钮
+@property (nonatomic,strong) UIButton *iconButton;
+// 名称Label
+@property (nonatomic,strong) UILabel *nameLabel;
+
 
 @end
 
@@ -41,6 +46,42 @@
     [self prepareMenuView];
     // 设置容器视图
     [self prepareContainerView];
+    // 设置头像视图
+    [self prepareIconButton];
+    // 设置昵称Label
+    [self prepareNameLabel];
+}
+
+// 设置头像视图
+- (void)prepareIconButton{
+    
+    // 设置头像图片
+    [self.iconButton setImage:[UIImage imageNamed:@"default_person_lit"] forState:UIControlStateNormal];
+    
+    // 设置约束
+    
+    // button有固有尺寸,使用autolayout时,如果没有设置宽高,就会使用默认的系统设置进行宽高的设置:
+    // 隐式调用sizeToFit方法,该方法会根据原始尺寸进行设置
+    [self.iconButton mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_equalTo(self.view).mas_offset(20);
+        // 设置左侧间距  利用水平居中的特性在竖屏时对头像视图进行压缩
+        // 大于等于边距  既可以保证右侧间距也大于等于5(竖屏时会进行压缩),同时对横向宽度并不是具体值,这样autolayout就会根据固有尺寸设置button的宽高
+        make.left.mas_greaterThanOrEqualTo(5);
+        // 水平间距
+        make.centerX.mas_equalTo(self.view);
+        // 高度=宽度
+        make.height.mas_equalTo(self.iconButton.mas_width);
+    }];
+    
+}
+
+// 设置昵称Label
+- (void)prepareNameLabel{
+    
+    [self.nameLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_equalTo(self.iconButton.mas_bottom).mas_offset(30);
+        make.centerX.mas_equalTo(self.view);
+    }];
     
 }
 
@@ -111,6 +152,9 @@
             make.bottom.mas_equalTo(self.view).mas_offset(-30);
         }];
         
+        // 设置昵称
+        self.nameLabel.text = @"";
+        
     }else{
         // 横屏
         self.composeArea_StackView.axis = UILayoutConstraintAxisHorizontal;
@@ -118,6 +162,9 @@
             make.height.mas_equalTo(kMenumButtonLandScapeHeight);
             make.bottom.mas_equalTo(self.view);
         }];
+        
+        // 设置昵称
+        self.nameLabel.text = @"一只耳";
     }
     
     // 取出所有的菜单区按钮,将横竖屏情况传递给按钮
@@ -179,6 +226,24 @@
         _masterViewModel = [[JSMasterViewModel alloc] init];
     }
     return _masterViewModel;
+}
+
+- (UIButton *)iconButton{
+    
+    if (_iconButton == nil) {
+        _iconButton = [[UIButton alloc] init];
+        [self.view addSubview:_iconButton];
+    }
+    return _iconButton;
+}
+
+- (UILabel *)nameLabel{
+    if (_nameLabel == nil) {
+        _nameLabel = [[UILabel alloc] init];
+        _nameLabel.textColor = [UIColor whiteColor];
+        [self.view addSubview:_nameLabel];
+    }
+    return _nameLabel;
 }
 
 /*
