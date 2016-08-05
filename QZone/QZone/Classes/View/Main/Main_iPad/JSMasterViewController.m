@@ -146,9 +146,17 @@
     
     // 判断按钮类型
     if (sender.item.isComposeArea) {
+        
         // 撰写区
-        JSComposeViewController *composeViewController = [[JSComposeViewController alloc] initWithTitle:sender.item.title];
+        JSComposeViewController *composeViewController = [[JSComposeViewController alloc] initWithTitle:sender.item.title completeBlock:^{
+            
+            self.selectedButton.selected = NO;
+            self.selectedButton = nil;
+            
+        }];
+        
         composeViewController.view.backgroundColor = [UIColor randomColor];
+        
         UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:composeViewController];
         
         // 设置modal展示样式

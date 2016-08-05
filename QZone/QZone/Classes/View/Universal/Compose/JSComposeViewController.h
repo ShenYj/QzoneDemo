@@ -12,6 +12,6 @@
 
 @interface JSComposeViewController : UIViewController
 
-- (instancetype)initWithTitle:(NSString *)title;
+- (instancetype)initWithTitle:(NSString *)title completeBlock:(void(^)())completeBlock;
 
 @end

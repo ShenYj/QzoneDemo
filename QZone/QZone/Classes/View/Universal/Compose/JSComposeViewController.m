@@ -15,14 +15,17 @@
 @implementation JSComposeViewController{
     
     NSString *_navigationTitle;
+    void (^_completeBlock)();
 }
 
 
-- (instancetype)initWithTitle:(NSString *)title{
+- (instancetype)initWithTitle:(NSString *)title completeBlock:(void (^)())completeBlock{
     
     self = [super init];
     if (self) {
+        
         _navigationTitle = title;
+        _completeBlock = completeBlock;
         
         [self prepareComposeView];
     }
@@ -38,6 +41,12 @@
 }
 
 - (void)clickLeftBarButtonItem:(UIBarButtonItem *)sender{
+    
+    // 完成回调
+    if (_completeBlock) {
+        _completeBlock();
+    }
+    _completeBlock();
     
     [self dismissViewControllerAnimated:YES completion:nil];
 }
