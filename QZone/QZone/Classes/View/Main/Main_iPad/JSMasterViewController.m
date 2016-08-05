@@ -35,6 +35,10 @@
 // 记录选中按钮
 @property (nonatomic,strong) JSMasterButton *selectedButton;
 
+// 子控制器的缓存
+@property (nonatomic,strong) NSMutableDictionary *subViewControllersCache;
+
+
 @end
 
 
@@ -135,12 +139,20 @@
     self.selectedButton = sender;
     
     
-    JSDetailViewController *detailViewController = [[JSDetailViewController alloc] initWithMasterItem:sender.item];
-    detailViewController.view.backgroundColor = kbackgroundColor;
+    // 如果缓存中存在子视图控制器,直接获取
+    JSDetailViewController *detailViewController = self.subViewControllersCache[sender.item.title];
+    if (detailViewController == nil) {
+        
+        // 如果缓存中没有子视图控制器,先创建,再存入缓存中
+        detailViewController = [[JSDetailViewController alloc] initWithMasterItem:sender.item];
+
+        // 将子控制器存储到缓存
+        [self.subViewControllersCache setObject:detailViewController forKey:sender.item.title];
+    }
+    
+    // 切换子视图控制器
     [self.splitViewController showDetailViewController:detailViewController sender:self];
 
-    
-    
     
     // 切换明细视图控制器
     /*
@@ -298,6 +310,14 @@
         [self.view addSubview:_nameLabel];
     }
     return _nameLabel;
+}
+
+- (NSMutableDictionary *)subViewControllersCache{
+    
+    if (_subViewControllersCache == nil) {
+        _subViewControllersCache = [NSMutableDictionary dictionary];
+    }
+    return _subViewControllersCache;
 }
 
 /*
