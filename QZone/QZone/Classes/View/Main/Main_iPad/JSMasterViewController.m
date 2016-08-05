@@ -130,6 +130,23 @@
     sender.selected = YES;
     self.selectedButton = sender;
     
+    // 切换明细视图控制器
+    /*
+        参数1: 新的明细控制器 (如果已经存在明细控制器,且原来的明细控制器没有其他强引用,则切换新明细控制器后,圆明细控制器由于没有强引用会被释放
+        参数2: 事件响应的发起者 (控制器) ,事件响应者链条监听中需要根据这个参数判断是哪个控制器 ; 当前在主视图控制器下,所以传入self ,但这里并不会使用到,也可以传入nil
+     */
+    
+    UIViewController *detail = [[UIViewController alloc] init];
+    detail.view.backgroundColor = [UIColor randomColor];
+    [self.splitViewController showDetailViewController:detail sender:self];
+    /*
+            切换主视图控制器或明细控制器
+           具体切换哪个位置上的控制器由sender来确定:
+        如果sender为当前的主视图控制器,则切换到主视图控制器的位置上
+        如果sender为明细视图控制器,则切换到明细视图控制器的位置上
+//     */
+//    UIViewController *master = [[UIViewController alloc] init];
+//    [self.splitViewController showViewController:detail sender:self.splitViewController.viewControllers[1]];
 }
 
 
