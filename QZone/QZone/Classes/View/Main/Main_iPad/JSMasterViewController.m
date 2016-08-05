@@ -119,6 +119,14 @@
             make.bottom.mas_equalTo(self.view);
         }];
     }
+    
+    // 取出所有的菜单区按钮,将横竖屏情况传递给按钮
+    for (JSMasterButton *button in self.menuArea_StackView.subviews) {
+        
+        // 将横竖屏传递给JSButton
+        [button prepareContentEdgeWithPortrait:portrait];
+    }
+    
 }
 
 
