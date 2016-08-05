@@ -7,7 +7,7 @@
 //
 
 #import "JSDetailViewController.h"
-#import "JSMasterButton.h"
+#import "JSMasterItem.h"
 
 @interface JSDetailViewController ()
 
@@ -18,16 +18,17 @@
 
 @implementation JSDetailViewController{
     
-    JSMasterButton *_masterButton;
+    JSMasterItem *_masterItem;
 }
 
 
-- (instancetype)initWithMasterButton:(JSMasterButton *)button{
+- (instancetype)initWithMasterItem:(JSMasterItem *)item{
     
     self = [super init];
     if (self) {
-        _masterButton = button;
+        _masterItem = item;
         
+        // 遮挡分割线
         [self prepareMaskView];
     }
     
@@ -38,13 +39,32 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    self.containerView_NavigationView.view.backgroundColor = [UIColor randomColor];
+    // 设置容器视图
+    [self prepareContainerView];
+    
     [self.containerView_NavigationView.view mas_makeConstraints:^(MASConstraintMaker *make) {
 //        make.right.mas_equalTo(self.view).mas_offset(-40);
 //        make.top.mas_equalTo(self.view).mas_offset(20);
         // 这里直接设置上左下右是无效的,需要设置内边距
         make.edges.mas_equalTo(UIEdgeInsetsMake(20, 0, 0, 40));
     }];
+}
+
+// 设置容器视图
+- (void)prepareContainerView{
+    
+    // 获取控制器类名
+    NSString *className = _masterItem.controllerClassName;
+    // 
+    Class class = NSClassFromString(className);
+    
+    UIViewController *viewController = [[class alloc] init];
+    self.containerView_NavigationView =[[UINavigationController alloc] initWithRootViewController:viewController];
+    // 添加子控制器
+    [self addChildViewController:_containerView_NavigationView];
+    // 添加子视图
+    [self.view addSubview:_containerView_NavigationView.view];
+    
 }
 
 // 遮挡分割线
@@ -64,19 +84,7 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (UINavigationController *)containerView_NavigationView{
-    
-    if (_containerView_NavigationView == nil) {
-        
-        UIViewController *viewController = [[UIViewController alloc] init];
-        _containerView_NavigationView = [[UINavigationController alloc] initWithRootViewController:viewController];
-        // 添加子控制器
-        [self addChildViewController:_containerView_NavigationView];
-        // 添加子视图
-        [self.view addSubview:_containerView_NavigationView.view];
-    }
-    return _containerView_NavigationView;
-}
+
 
 /*
 #pragma mark - Navigation

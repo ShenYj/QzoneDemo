@@ -27,15 +27,15 @@
     if (_menumItems == nil) {
         
         NSArray *data = @[
-                          @{ @"title":@"全部动态", @"imageName":@"tab_bar_feed_icon"},
-                          @{ @"title":@"与我有关", @"imageName":@"tab_bar_passive_feed_icon"},
-                          @{ @"title":@"照片墙", @"imageName":@"tab_bar_pic_wall_icon"},
-                          @{ @"title":@"电子相框", @"imageName":@"tab_bar_e_album_icon"},
-                          @{ @"title":@"好友", @"imageName":@"tab_bar_friend_icon"},
-                          @{ @"title":@"更多", @"imageName":@"tab_bar_e_more_icon"},
-                          @{ @"title":@"说说", @"imageName":@"tabbar_mood", @"composeArea":@YES },
-                          @{ @"title":@"照片", @"imageName":@"tabbar_photo", @"composeArea":@YES },
-                          @{ @"title":@"日志", @"imageName":@"tabbar_blog", @"composeArea":@YES }
+                          @{ @"title":@"全部动态", @"imageName":@"tab_bar_feed_icon", @"controllerClassName":@"JSHomeTableViewController"},
+                          @{ @"title":@"与我有关", @"imageName":@"tab_bar_passive_feed_icon", @"controllerClassName":@"JSAboutMeTableViewController"},
+                          @{ @"title":@"照片墙", @"imageName":@"tab_bar_pic_wall_icon", @"controllerClassName":@"JSPictureWallCollectionViewController"},
+                          @{ @"title":@"电子相框", @"imageName":@"tab_bar_e_album_icon", @"controllerClassName":@"JSAlbumTableViewController"},
+                          @{ @"title":@"好友", @"imageName":@"tab_bar_friend_icon", @"controllerClassName":@"JSMyFriendTableViewController"},
+                          @{ @"title":@"更多", @"imageName":@"tab_bar_e_more_icon", @"controllerClassName":@"JSMoreAppTableViewController"},
+                          @{ @"title":@"说说", @"imageName":@"tabbar_mood", @"composeArea":@YES, @"controllerClassName":@"JSComposeViewController" },
+                          @{ @"title":@"照片", @"imageName":@"tabbar_photo", @"composeArea":@YES, @"controllerClassName":@"JSComposeViewController" },
+                          @{ @"title":@"日志", @"imageName":@"tabbar_blog", @"composeArea":@YES, @"controllerClassName":@"JSComposeViewController"  }
                           ];
         
         NSMutableArray *mArr = [NSMutableArray array];

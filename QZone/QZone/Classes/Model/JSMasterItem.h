@@ -17,6 +17,8 @@
 @property (nonatomic,copy) NSString *imageName;
 // 按钮所处区域标识
 @property (nonatomic,assign,getter=isComposeArea) BOOL composeArea;
+// 视图控制器名
+@property (nonatomic,copy) NSString *controllerClassName;
 
 // 类方法
 + (instancetype)itemWithDict:(NSDictionary *)dict;

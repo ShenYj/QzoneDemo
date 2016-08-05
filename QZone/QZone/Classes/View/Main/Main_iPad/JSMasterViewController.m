@@ -135,9 +135,11 @@
     self.selectedButton = sender;
     
     
-    JSDetailViewController *detailViewController = [[JSDetailViewController alloc] initWithMasterButton:sender];
+    JSDetailViewController *detailViewController = [[JSDetailViewController alloc] initWithMasterItem:sender.item];
     detailViewController.view.backgroundColor = kbackgroundColor;
     [self.splitViewController showDetailViewController:detailViewController sender:self];
+
+    
     
     
     // 切换明细视图控制器

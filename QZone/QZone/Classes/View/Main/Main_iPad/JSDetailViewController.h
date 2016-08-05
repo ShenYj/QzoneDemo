@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-@class JSMasterButton;
+@class JSMasterItem;
 @interface JSDetailViewController : UIViewController
-- (instancetype)initWithMasterButton:(JSMasterButton *)button;
+- (instancetype)initWithMasterItem:(JSMasterItem *)item;
 @end
