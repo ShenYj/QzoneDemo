@@ -43,8 +43,8 @@
     [self prepareContainerView];
     
     [self.containerView_NavigationView.view mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.right.mas_equalTo(self.view).mas_offset(-40);
-//        make.top.mas_equalTo(self.view).mas_offset(20);
+        //        make.right.mas_equalTo(self.view).mas_offset(-40);
+        //        make.top.mas_equalTo(self.view).mas_offset(20);
         // 这里直接设置上左下右是无效的,需要设置内边距
         make.edges.mas_equalTo(UIEdgeInsetsMake(20, 0, 0, 40));
     }];
@@ -55,15 +55,41 @@
     
     // 获取控制器类名
     NSString *className = _masterItem.controllerClassName;
-    // 
+    // 使用运行时机制将类名转为类
     Class class = NSClassFromString(className);
     
+    // 导航控制器的根控制器
     UIViewController *viewController = [[class alloc] init];
+    
+    // 设置导航控制器的根控制器
+    [self prepareNavigationRootViewController:viewController];
+    
+    // 创建导航控制器
     self.containerView_NavigationView =[[UINavigationController alloc] initWithRootViewController:viewController];
     // 添加子控制器
     [self addChildViewController:_containerView_NavigationView];
     // 添加子视图
     [self.view addSubview:_containerView_NavigationView.view];
+    
+}
+
+// 设置导航控制器的根控制器视图
+- (void)prepareNavigationRootViewController:(UIViewController *)rooViewController{
+    
+    //    rooViewController.title = _masterItem.title;等同于下面的设置
+    rooViewController.navigationItem.title = _masterItem.title;
+    
+    if (_masterItem.segmetnItem) {
+        
+        // 设置分段控件
+        UISegmentedControl *segment = [[UISegmentedControl alloc] initWithItems:_masterItem.segmetnItem];
+        
+        rooViewController.navigationItem.titleView = segment;
+        
+        // 分段控件颜色
+        segment.tintColor = kbackgroundColor;
+    }
+    
     
 }
 

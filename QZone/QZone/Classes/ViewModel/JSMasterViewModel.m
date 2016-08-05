@@ -27,11 +27,11 @@
     if (_menumItems == nil) {
         
         NSArray *data = @[
-                          @{ @"title":@"全部动态", @"imageName":@"tab_bar_feed_icon", @"controllerClassName":@"JSHomeTableViewController"},
+                          @{ @"title":@"全部动态", @"imageName":@"tab_bar_feed_icon", @"controllerClassName":@"JSHomeTableViewController", @"segmetnItem":@[@"全部动态",@"好友动态"]},
                           @{ @"title":@"与我有关", @"imageName":@"tab_bar_passive_feed_icon", @"controllerClassName":@"JSAboutMeTableViewController"},
                           @{ @"title":@"照片墙", @"imageName":@"tab_bar_pic_wall_icon", @"controllerClassName":@"JSPictureWallCollectionViewController"},
                           @{ @"title":@"电子相框", @"imageName":@"tab_bar_e_album_icon", @"controllerClassName":@"JSAlbumTableViewController"},
-                          @{ @"title":@"好友", @"imageName":@"tab_bar_friend_icon", @"controllerClassName":@"JSMyFriendTableViewController"},
+                          @{ @"title":@"好友", @"imageName":@"tab_bar_friend_icon", @"controllerClassName":@"JSMyFriendTableViewController", @"segmetnItem":@[@"我的好友",@"特别关注"]},
                           @{ @"title":@"更多", @"imageName":@"tab_bar_e_more_icon", @"controllerClassName":@"JSMoreAppTableViewController"},
                           @{ @"title":@"说说", @"imageName":@"tabbar_mood", @"composeArea":@YES, @"controllerClassName":@"JSComposeViewController" },
                           @{ @"title":@"照片", @"imageName":@"tabbar_photo", @"composeArea":@YES, @"controllerClassName":@"JSComposeViewController" },

@@ -19,6 +19,8 @@
 @property (nonatomic,assign,getter=isComposeArea) BOOL composeArea;
 // 视图控制器名
 @property (nonatomic,copy) NSString *controllerClassName;
+// 分段控件的数据
+@property (nonatomic,strong) NSArray *segmetnItem;
 
 // 类方法
 + (instancetype)itemWithDict:(NSDictionary *)dict;
