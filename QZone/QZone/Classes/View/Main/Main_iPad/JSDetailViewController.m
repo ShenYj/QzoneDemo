@@ -88,10 +88,29 @@
         
         // 分段控件颜色
         segment.tintColor = kbackgroundColor;
+        
+        // 默认的选中索引
+        segment.selectedSegmentIndex = 0;
+        
+        
+        if ([rooViewController respondsToSelector:@selector(segmentValueChanged:)]) {
+            
+            // 协议实现segment事件监听
+            [segment addTarget:rooViewController action:@selector(segmentValueChanged:) forControlEvents:UIControlEventValueChanged];
+
+            
+            // 设置默认索引,并不会调用响应事件,所以还需要手动调用一下,如果事件中进行了请求数据,这样才会被执行
+            [(id)rooViewController segmentValueChanged:segment]; // id万能指针,响应所有的消息
+        }
     }
     
-    
 }
+
+//// 分段控件segment事件响应
+//- (void)segmentValueChanged:(UISegmentedControl *)sender{
+//    
+//    NSLog(@"%zd",sender.selectedSegmentIndex);
+//}
 
 // 遮挡分割线
 - (void)prepareMaskView{
@@ -99,7 +118,7 @@
     UIView *maskView = [[UIView alloc ] init];
     maskView.backgroundColor = kbackgroundColor;
     [self.view insertSubview:maskView atIndex:0];
-//    [self.view addSubview:maskView];
+    //    [self.view addSubview:maskView];
     [maskView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.mas_equalTo(UIEdgeInsetsMake(0, -2, 0, 0));
     }];

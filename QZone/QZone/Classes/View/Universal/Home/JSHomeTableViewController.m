@@ -7,8 +7,9 @@
 //
 
 #import "JSHomeTableViewController.h"
+#import "JSDetailViewController.h"
 
-@interface JSHomeTableViewController ()
+@interface JSHomeTableViewController () <JSDetailViewControllerProtocol>
 
 @end
 
@@ -39,6 +40,13 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 #warning Incomplete implementation, return the number of rows
     return 0;
+}
+
+#pragma mark -- JSDetailViewControllerProtocol
+// 实现协议方法
+- (void)segmentValueChanged:(UISegmentedControl *)segment{
+    
+    NSLog(@"%zd",segment.selectedSegmentIndex);
 }
 
 /*
