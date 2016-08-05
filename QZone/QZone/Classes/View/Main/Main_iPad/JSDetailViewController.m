@@ -28,6 +28,7 @@
     if (self) {
         _masterButton = button;
         
+        [self prepareMaskView];
     }
     
     return self;
@@ -43,6 +44,18 @@
 //        make.top.mas_equalTo(self.view).mas_offset(20);
         // 这里直接设置上左下右是无效的,需要设置内边距
         make.edges.mas_equalTo(UIEdgeInsetsMake(20, 0, 0, 40));
+    }];
+}
+
+// 遮挡分割线
+- (void)prepareMaskView{
+    
+    UIView *maskView = [[UIView alloc ] init];
+    maskView.backgroundColor = kbackgroundColor;
+    [self.view insertSubview:maskView atIndex:0];
+//    [self.view addSubview:maskView];
+    [maskView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.mas_equalTo(UIEdgeInsetsMake(0, -2, 0, 0));
     }];
 }
 

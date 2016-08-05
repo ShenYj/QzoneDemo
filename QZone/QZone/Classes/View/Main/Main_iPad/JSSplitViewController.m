@@ -48,6 +48,9 @@
     // 设置SplitViewController
     [self prepareSplitViewController];
     
+    // 方式一:  与主视图,明细视图背景色相同,避免出现分割线  
+//    self.view.backgroundColor = kbackgroundColor;
+    
 }
 
 // 设置SplitViewController
