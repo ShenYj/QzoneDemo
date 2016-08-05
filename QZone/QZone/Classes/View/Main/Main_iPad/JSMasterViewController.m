@@ -32,6 +32,8 @@
 // 名称Label
 @property (nonatomic,strong) UILabel *nameLabel;
 
+// 记录选中按钮
+@property (nonatomic,strong) JSMasterButton *selectedButton;
 
 @end
 
@@ -105,12 +107,29 @@
             [self.menuArea_StackView addArrangedSubview:button];
 
         }
+        // 设置事件监听
+        [button addTarget:self action:@selector(clickMasterButton:) forControlEvents:UIControlEventTouchUpInside];
         
     }
     
     // 设置背景色
     self.view.backgroundColor = [UIColor colorWithWhite:34 / 255.0 alpha:1.0];
 
+}
+
+#pragma mark -- 事件响应
+
+// 点击主视图按钮
+- (void)clickMasterButton:(JSMasterButton *)sender{
+    
+    if (self.selectedButton == sender) {
+        return;
+    }
+    
+    self.selectedButton.selected = NO;
+    sender.selected = YES;
+    self.selectedButton = sender;
+    
 }
 
 

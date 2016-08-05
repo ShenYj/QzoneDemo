@@ -10,6 +10,9 @@
 @class JSMasterItem;
 @interface JSMasterButton : UIButton
 
+// 模型对象
+@property (nonatomic,strong) JSMasterItem *item;
+
 // 类方法创建
 + (instancetype)buttonWithItem:(JSMasterItem *)item;
 // 对象方法

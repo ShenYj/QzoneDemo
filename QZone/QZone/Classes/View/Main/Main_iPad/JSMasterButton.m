@@ -9,13 +9,7 @@
 #import "JSMasterButton.h"
 #import "JSMasterItem.h"
 
-@implementation JSMasterButton{
-    
-    // 模型对象
-    JSMasterItem *_item;
-    
-}
-
+@implementation JSMasterButton
 
 + (instancetype)buttonWithItem:(JSMasterItem *)item{
     
@@ -48,7 +42,7 @@
     [self setImage:[UIImage imageNamed:_item.imageName] forState:UIControlStateNormal];
     
     // 设置选中背景图
-    [self setImage:[UIImage imageNamed:@"tabbar_separate_selected_bg"] forState:UIControlStateSelected];
+    [self setBackgroundImage:[UIImage imageNamed:@"tabbar_separate_selected_bg"] forState:UIControlStateSelected];
     
     // 分隔线
     UIImageView *seperatorImageView = [[UIImageView alloc] init];
