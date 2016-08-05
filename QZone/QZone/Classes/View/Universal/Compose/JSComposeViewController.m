@@ -43,10 +43,13 @@
 - (void)clickLeftBarButtonItem:(UIBarButtonItem *)sender{
     
     // 完成回调
+    
+//    NSAssert(_completeBlock != nil, @"_completeBlock is nil");  手机TabBar控制器下,不需要考虑菜单区的按钮重设,完成回调传递了nil,所以不能使用断言处理
+//        _completeBlock();
     if (_completeBlock) {
         _completeBlock();
     }
-    _completeBlock();
+
     
     [self dismissViewControllerAnimated:YES completion:nil];
 }

@@ -113,16 +113,16 @@
     
     [self.masterViewController showContainerView:showContainer];
     
-//    if (showContainer) {
-//        // 正在分屏
+    if (showContainer) {
+        // 正在分屏
 //        NSLog(@"正在分屏");
-//        [self.masterViewController showContainerView:isTrait];
-//        
-//    }else {
-//        
+        [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleDefault;
+        
+    }else {
+        
 //        NSLog(@"没有分屏");
-//        [self.masterViewController showContainerView:isTrait];
-//    }
+        [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
+    }
     
 }
 

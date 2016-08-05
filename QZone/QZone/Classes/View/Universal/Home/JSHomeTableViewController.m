@@ -46,7 +46,7 @@
 // 实现协议方法
 - (void)segmentValueChanged:(UISegmentedControl *)segment{
     
-    NSLog(@"%zd",segment.selectedSegmentIndex);
+//    NSLog(@"%zd",segment.selectedSegmentIndex);
 }
 
 /*

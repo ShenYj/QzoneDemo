@@ -11,7 +11,7 @@
 @interface JSTabBar : UITabBar
 
 // 点击ComposeButton的block
-@property (nonatomic,assign) void(^composeButtonBlock)();
+@property (nonatomic,copy) void(^composeButtonBlock)();
 
 
 @end

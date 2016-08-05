@@ -12,7 +12,7 @@
 #import "JSAboutMeTableViewController.h"
 #import "JSMoreAppTableViewController.h"
 #import "JSMySpaceTableViewController.h"
-
+#import "JSComposeViewController.h"
 
 
 @interface JSTabBarController ()
@@ -26,10 +26,18 @@
     
     // 设置自定义TabBar
     JSTabBar *tabBar = [[JSTabBar alloc] init];
+    
+    // 自定义TabBar的ComposeButton点击回调Block
     [tabBar setComposeButtonBlock:^{
+
+        JSComposeViewController *composeViewController = [[JSComposeViewController alloc] initWithTitle:@"写说说" completeBlock:nil];
+        composeViewController.view.backgroundColor = [UIColor randomColor];
+        UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:composeViewController];
+        [self presentViewController:navigationController animated:YES completion:nil];
         
-        NSLog(@"ComposeButton被点击了");
+        
     }];
+    
     [self setValue:tabBar forKey:@"tabBar"];
     
     // 添加子控制器
@@ -52,6 +60,7 @@
     
     // 设置tabbarItem字体颜色
     [viewController.tabBarItem setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor RGBColorWithRed:255 withGreen:205 withBlue:25]} forState:UIControlStateSelected];
+    
     [self addChildViewController:viewController];
     
 }

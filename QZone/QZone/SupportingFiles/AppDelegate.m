@@ -44,6 +44,9 @@
         JSSplitViewController *splitViewController = [[JSSplitViewController alloc] init];
 
         self.window.rootViewController = splitViewController;
+        
+        // 设置状态栏样式
+        [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
     }
 
     [self.window makeKeyAndVisible];

@@ -50,12 +50,10 @@
     
     // 设置菜单区视图
     [self prepareMenuView];
+
     // 设置容器视图
     [self prepareContainerView];
-    // 设置头像视图
-    [self prepareIconButton];
-    // 设置昵称Label
-    [self prepareNameLabel];
+    
 }
 
 // 设置头像视图
@@ -128,7 +126,10 @@
      
      解决此类问题一般两种方式: 1.设置延迟  2.去掉其中一次操作
      */
-    
+    // 设置头像视图
+    [self prepareIconButton];
+    // 设置昵称Label
+    [self prepareNameLabel];
 }
 
 #pragma mark -- 事件响应

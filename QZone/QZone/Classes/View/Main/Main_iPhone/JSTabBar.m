@@ -44,7 +44,10 @@ static const NSInteger childViewControllerCounts = 5; // 包含中心的按钮
 // ComposeButton点击事件
 - (void)clickComposeButton:(UIButton *)sender{
     
-    self.composeButtonBlock();
+    if (self.composeButtonBlock) {
+        
+        self.composeButtonBlock();
+    }
 }
 
 - (void)layoutSubviews{
