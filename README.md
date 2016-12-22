@@ -1,6 +1,6 @@
 # QzoneDemo
 
-## iPhone/iPad 通用设备开发Demo ![ShenYj](https://github.com/ShenYj)
+## iPhone/iPad 通用设备开发Demo [ShenYj](https://github.com/ShenYj)
 
 - [x] 仿Zone,模拟通用设备开发,适配iPad和iPhone 
 - [x] 分屏适配 
