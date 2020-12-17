@@ -92,6 +92,17 @@
 // 设置菜单区视图
 - (void)prepareMenuView{
     
+    [self.view addSubview:self.composeArea_StackView];
+    [self.view addSubview:self.menuArea_StackView];
+    [self.composeArea_StackView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.bottom.left.right.mas_equalTo(self.view);
+        make.height.mas_equalTo(kMenumButtonLandScapeHeight);
+    }];
+    [self.menuArea_StackView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.bottom.mas_equalTo(self.composeArea_StackView.mas_top);
+        make.left.right.mas_equalTo(self.view);
+    }];
+    
     // 添加子视图(UIButton)
     for (JSMasterItem *item in self.masterViewModel.menumItems) {
         
@@ -227,6 +238,8 @@
     
     // 设置属性引用 不是代码实现容器视图的必须环节(下面需要使用这个容器视图,设置显隐)
     self.masterContainerView = tabBarController.view;
+    // FIX: 默认隐藏
+    self.masterContainerView.hidden = YES;
     
 }
 
@@ -285,34 +298,18 @@
 #pragma mark -- 懒加载
 
 - (UIStackView *)composeArea_StackView{
-    
     if (_composeArea_StackView == nil) {
         _composeArea_StackView = [[UIStackView alloc] init];
-        [self.view addSubview:_composeArea_StackView];
-        
-        self.composeArea_StackView.distribution = UIStackViewDistributionFillEqually;
-        
-        [self.composeArea_StackView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.bottom.left.right.mas_equalTo(self.view);
-            make.height.mas_equalTo(kMenumButtonLandScapeHeight);
-        }];
-        
+        _composeArea_StackView.distribution = UIStackViewDistributionFillEqually;
     }
     return _composeArea_StackView;
 }
 
 - (UIStackView *)menuArea_StackView{
-    
     if (_menuArea_StackView == nil) {
         _menuArea_StackView = [[UIStackView alloc] init];
-        [self.view addSubview:_menuArea_StackView];
         // 设置为垂直排列
-        self.menuArea_StackView.axis = UILayoutConstraintAxisVertical;
-        
-        [self.menuArea_StackView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.bottom.mas_equalTo(self.composeArea_StackView.mas_top);
-            make.left.right.mas_equalTo(self.view);
-        }];
+        _menuArea_StackView.axis = UILayoutConstraintAxisVertical;
     }
     
     return _menuArea_StackView;
